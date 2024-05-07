@@ -1,10 +1,130 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница - ArtEkat</title>
 </head>
+<link rel="stylesheet" href="{% static "deps/css/style.css" %}"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 <body>
-    <p>govno</p>
+    <div class="glavnaja">
+        <a href="#">Ссылка на карту(временно)</a>
+        <a href="{% url "main:about" %}">Ссылка на нас(временно)</a>
+        <a href="#">Ссылка на ргеистрацию(временно)</a>
+        <div class="relative-wrapper-one">
+          <p class="karta-art-ob-ektov-goroda-ekaterinburga">
+            карта арт-объектов города Екатеринбурга, с описанием
+            <br />
+            и готовыми маршрутами для жителей города и
+            туристов<strong
+              class="karta-art-ob-ektov-goroda-ekaterinburga-emphasis-3"
+              >.</strong
+            >
+          </p>
+          <div class="flex-wrapper-one">
+            <div class="frame-34">
+              <p class="ikonki-markery-art-ob-ektov-na-karte">
+                Иконки-маркеры арт объектов на карте
+              </p>
+            </div>
+          </div>
+        </div>
+        <h1 class="art-ekat">ArtEkat</h1>
+        <div class="relative-wrapper-two">
+          <img
+            alt=""
+            class="group-5"
+            src="https://static.overlay-tech.com/assets/17d18104-13f4-41a5-98f5-729dedd8068d.svg"
+          />
+          <div class="frame-58">
+            <div class="frame-23">
+              <!-- Include here the component "Frame23" -->
+            </div>
+          </div>
+          <div class="frame-18">
+            <div class="frame-35">
+              <p class="otprav-te-nam-svoj-art-ob-ekt">
+                Отправьте нам свой арт-объект
+              </p>
+            </div>
+            <div class="frame-36">
+              <p class="esli-u-vas-est-art-ob-ekty-kotorymi-vy">
+                Если у Вас есть арт-объекты, которыми Вы хотите
+                поделиться, то жмите кнопку либо пишите на почту
+                <strong
+                  class="esli-u-vas-est-art-ob-ekty-kotorymi-vy-emphasis-1"
+                  >&#64;artekat196&#64;gmail.com</strong
+                >
+              </p>
+            </div>
+            <div class="frame-37">
+              <!-- Include here the component "Frame37" -->
+            </div>
+          </div>
+          <div class="frame-24">
+            <div class="frame-18-two">
+              <img
+                alt=""
+                class="skul-ptura"
+                src="https://static.overlay-tech.com/assets/5c4d8724-0f48-4b5a-a227-61370b546d85.svg"
+              />
+              <p class="skul-ptury-pamjatniki-statui">
+                Скульптуры, памятники, статуи
+              </p>
+            </div>
+            <div class="frame-19">
+              <img
+                alt=""
+                class="skul-ptura"
+                src="https://static.overlay-tech.com/assets/fb7e4698-8d04-416b-b675-6803ff2e1fc3.svg"
+              />
+              <p class="skul-ptury-pamjatniki-statui">Граффити</p>
+            </div>
+            <div class="frame-20">
+              <img
+                alt=""
+                class="skul-ptura"
+                src="https://static.overlay-tech.com/assets/596a68e9-69f4-4320-b749-9eada689fa45.svg"
+              />
+              <p class="skul-ptury-pamjatniki-statui">
+                Инсталяция
+              </p>
+            </div>
+            <div class="frame-21">
+              <img
+                alt=""
+                class="skul-ptura"
+                src="https://static.overlay-tech.com/assets/6bd9c293-d1b6-4511-bee9-cbaded2e6b6e.svg"
+              />
+              <p class="skul-ptury-pamjatniki-statui">Стелла</p>
+            </div>
+            <div class="frame-22">
+              <img
+                alt=""
+                class="skul-ptura"
+                src="https://static.overlay-tech.com/assets/51a0d70f-0e48-4b58-86c9-9b0ccb1c0008.svg"
+              />
+              <p class="skul-ptury-pamjatniki-statui">
+                Стенография
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="relative-wrapper-three">
+          <img
+            alt=""
+            class="group-1"
+            src="https://static.overlay-tech.com/assets/a6eb3c24-c5d9-4b50-8327-62b028d8fe56.svg"
+          />
+          <div class="frame-57">
+            <div>
+              <!-- Include here the component "Group10" -->
+            </div>
+          </div>
+        </div>
+      </div>
 </body>
 </html>
