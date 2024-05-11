@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'debug_toolbar',
     'django_password_eye',
+    'rest_framework',
 
     'main',
     'map',
