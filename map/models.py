@@ -36,7 +36,7 @@ class Cardss(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return "/rating/%i" % self.id
+        return "/rating/%s" % self.slug
     class Meta:
         db_table = "cardss"
         verbose_name = "Карточка"

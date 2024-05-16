@@ -1,98 +1,56 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        html {
-            background-color:#214c84;
-            background-blend-mode:overlay;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            background-repeat:no-repeat;
-            background-size:cover;
-            height:100%;
-          }
-
-          body {
-            background-color:transparent;
-          }
-
-          .registration-cssave{
-            padding:50px 0;
-          }
-
-          .registration-cssave div {
-            max-width:800px;
-            padding:50px 70px;
-            border-radius:10px;
-            box-shadow:4px 4px 15px rgba(0, 0, 0, 0.2);
-            background-color:#fff;
-          }
-
-          .registration-cssave div h3 {
-            font-weight:bold;
-            margin-bottom:30px;
-          }
-
-          .registration-cssave .item {
-            border-radius:10px;
-            margin-bottom:25px;
-            padding:10px 20px;
-          }
-
-          .registration-cssave .create-account {
-            border-radius:30px;
-            padding:10px 20px;
-            font-size:18px;
-            font-weight:bold;
-            background-color:#d641bd;
-            border:none;
-            color:white;
-            margin-top:20px;
-          }
-
-          @media (max-width: 576px) {
-            .registration-cssave div {
-              padding:50px 20px;
-            }
-          }
-    </style>
 </head>
-<body>
-        <form action="{% url "users:login" %}" method = "post">
-            {% csrf_token %}
-            <div class="registration-cssave">
-                <div class="form-group">
-                    <h3 class="text-center">Форма входа</h3>
-                    {% if form.non_field_errors %}
+<link rel="stylesheet" href="{% static "deps/css/inputStyle.css"%}" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<body class="body">
+    <form action="{% url "users:login" %}" method = "post">
+                {% csrf_token %}
+        <div class="vhod-two">
+            <div class="relative-wrapper-one">
+              <div class="frame-14"></div>
+              <div class="flex-wrapper-one">
+                <p class="vhod">Вход</p>
+                {% if form.non_field_errors %}
                         <p>{{ form.non_field_errors }}</p>
-                    {% endif %}
-                    <div class="form-group">
-                        {{ form.username.label }}
-                        {{ form.username }}
-                    </div>
-                    <div class="form-group">
-                        {{ form.password.label }}
-                        {{ form.password }}
-                    </div>
-                        {% comment %}
-                    <h3 class="text-center">Форма входа</h3>
-                    <div class="form-group">
-                        <input class="form-control item" type="text" name="username" maxlength="15" minlength="4" pattern="^[a-zA-Z0-9_.-]*$" id="username" placeholder="Логин" required>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control item" type="password" name="Пароль" minlength="0" id="password" placeholder="password" required>
-                    </div>
-                    {% endcomment %}
-                        <div class="form-group">
-                            <button class="btn btn-primary btn-block create-account" >Вход в аккаунт</button>
-                        </div>
-                </div>
+                {% endif %}
+                <input class="login" type="text" name="username" maxlength="15" minlength="4" pattern="^[a-zA-Z0-9_.-]*$" id="id_username" placeholder="Логин" required>
+                <input class="login" type="password" name="password" minlength="0" id="id_password" placeholder="Пароль" required>
+            <button class="inputButton">Войти в аккаунт</button>
+            <div class="flex-wrapper-two">
+              <p class="net-akkaunta">Нет аккаунта?</p>
+              <button onclick="window.open(`{% url "users:registration" %}`)" class="zaregistrirovat-sja">Зарегистрироваться</button>
             </div>
-        </form>
+              </div>
+            </div>
+            <div class="frame-3">
+              <img
+                alt=""
+                class="compass"
+                src="https://static.overlay-tech.com/assets/c1903476-d21a-4804-a1fa-36dbd6098ff9.svg"
+              />
+              <div>
+                <div class="mainAndVk">
+                    <img
+                    alt=""
+                    class="mail"
+                    src="https://static.overlay-tech.com/assets/5f45eb8a-7019-4466-9034-b30f6ed00a19.svg"
+                    />
+                    <img
+                    alt=""
+                    class="mail"
+                    src="https://static.overlay-tech.com/assets/2c6719c0-3c27-4139-9d74-a34b43f0ab34.svg"
+                    />
+                </div>
+              </div>
+            </div>
+          </div>
+    </form>>
 </body>
 </html>

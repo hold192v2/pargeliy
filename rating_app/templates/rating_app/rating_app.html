@@ -5,16 +5,22 @@
   <title>Title</title>
 </head>
 <body>
+    <img src="{{ object.image.url }}"  alt="{{ object.name }}">
+    <p>{{ object.image }} {{ object.name }}</p>
+    <p>Автор: {{ object.author}}</p>
+    <p>Адрес: {{ object.adress }}</p>
+    <p>Информация об Арт-объекте: {{ object.info }}</p>
     <form method="POST">
+
         {% csrf_token %}
         {{comment_form}}
         <div class="form-group">
-            <button class="btn btn-primary btn-block create-account" >Оставить комментарий</button>
+            <button class="btn btn-primary btn-block create-account" >Оставить отзыв</button>
         </div>
     </form>
     {% for comment in comments %}
   <blockquote class="blockquote">
-    <p>{{ comment.caption}}</p>
+    <p>{{ comment.author}}, {{ comment.caption}}, {{ comment.date_posted}}</p>
     <footer class="blockquote-footer">
      <cite>{{comment.user}}
         {% if  object.author.id == user.id %}

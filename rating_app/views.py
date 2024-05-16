@@ -1,16 +1,17 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, render
+from django.contrib.auth.decorators import login_required
 
 from map.models import Cardss
 from .forms import CommentForm
 from .models import Comment
 
-
-def post_detailview(request, id, *args, **kwargs):
+@login_required
+def post_detailview(request, slug, *args, **kwargs):
     user = request.user
-    post = Cardss.objects.get(id=id)
+    post = Cardss.objects.get(slug=slug)
     cf = CommentForm(data=request.POST or None)
-    comments = Comment.objects.filter().order_by("-pk")
+    comments = Comment.objects.filter(card=post).order_by("-slug")
     if request.method == 'POST':
         if cf.is_valid():
             content = request.POST.get('content')

@@ -1,0 +1,143 @@
+.body{
+  margin: 0;
+  overflow-x: hidden;
+}
+.vhod-two {
+    background-color: rgb(237,255,250);
+    overflow: hidden;
+    padding: 980px 0 0;
+    position: relative;
+  }
+  .relative-wrapper-one {
+    display: flex;
+    align-items: flex-start;
+    position: absolute;
+    left: -68px;
+    top: 5px;
+  }
+  .frame-14 {
+    width: 1920px;
+    height: 110px;
+    background: linear-gradient(
+      180deg,
+      rgb(139,213,203) 0%,
+      rgb(237,255,250) 100%
+    );
+    position: absolute;
+  }
+  .flex-wrapper-one {
+    background-size: 100% 100%;
+    background-position: center;
+    background-image: url("https://static.overlay-tech.com/assets/cb948451-2123-446a-9c34-cf50bb8e41f0.svg");
+    padding: 280px 641.62px 288.13px 743px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+  }
+  .vhod {
+    color: rgb(41,108,99);
+    margin-bottom: 45px;
+    margin-left: 269px;
+    letter-spacing: 1.6px;
+    font-family: var(--raleway-32-bold-family);
+    font-size: 28px;
+    font-weight: var(--raleway-32-bold-weight);
+    line-height: var(--raleway-32-bold-line-height);
+  }
+  .frame-15 {
+    background-color: rgb(139,213,203);
+    margin-bottom: 45px;
+    padding: 10px 554px 10px 10px;
+    display: flex;
+    align-items: center;
+  }
+  .login {
+    color: rgb(0, 0, 0);
+    letter-spacing: 1.2px;
+    padding: 0px 250px 0px 0px;
+    font-family: var(--raleway-24-semi-bold-family);
+    font-size: 28px;
+    font-weight: var(--raleway-24-semi-bold-weight);
+    line-height: var(--raleway-24-semi-bold-line-height);
+  }
+  .inputButton {
+    display: flex;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+    letter-spacing: 1.2px;
+    padding: 0px 250px 0px 0px;
+    font-family: var(--raleway-24-semi-bold-family);
+    font-size: 28px;
+    font-weight: var(--raleway-24-semi-bold-weight);
+    line-height: var(--raleway-24-semi-bold-line-height);
+  }
+  .frame-16 {
+    background-color: rgb(139,213,203);
+    margin-bottom: 36px;
+    padding: 10px 537px 10px 10px;
+    display: flex;
+    align-items: center;
+  }
+  .frame-17 {
+    background-color: rgb(139,213,203);
+    margin-bottom: 30px;
+    margin-left: 157px;
+    padding: 10px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .flex-wrapper-two {
+    padding: 0 0 0 126px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .net-akkaunta {
+    color: rgb(41,108,99);
+    margin-right: 5px;
+    letter-spacing: 1.2px;
+    font-family: var(--raleway-24-semi-bold-family);
+    font-size: 28px;
+    font-weight: var(--raleway-24-semi-bold-weight);
+    line-height: var(--raleway-24-semi-bold-line-height);
+  }
+  .zaregistrirovat-sja {
+    color: rgb(151,73,73);
+    text-decoration: underline;
+    letter-spacing: 1.2px;
+    font-family: var(--raleway-24-semi-bold-family);
+    font-size: 28px;
+    font-weight: var(--raleway-24-semi-bold-weight);
+    line-height: var(--raleway-24-semi-bold-line-height);
+    background: transparent;
+    border: none !important;
+  }
+  .frame-3 {
+    background: linear-gradient(
+      0deg,
+      rgb(139,213,203) 0%,
+      rgb(237,255,250) 100%
+    );
+    padding: 12.5px 495px 12.5px 600px;
+    display: flex;
+    align-items: center;
+  }
+  .compass {
+    width: 75px;
+    height: 75px;
+    margin-right: 600px;
+  }
+  .mail {
+    width: 70px;
+    height: 70px;
+  }
+  .mail:not(:last-of-type) {
+    margin-right: 10px;
+  }
+  .mainAndVk{
+    display: flex;
+    flex-direction: row;
+    margin-right: 10px;
+  }

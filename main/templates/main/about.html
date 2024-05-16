@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная - ArtEkat</title>
+    <title>О нас - ArtEkat</title>
 </head>
 <link rel="stylesheet" href="{% static "deps/css/main2.css"%}" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
@@ -19,13 +19,13 @@
               src="https://static.overlay-tech.com/assets/6a2b1154-5ade-42dd-a20a-10e0e46a9fc9.svg"
             />
             <div class="frame-10">
-              <button onclick="window.open('{% url "main:contacts" %}')" class="kontakty">Контакты</button>
+                <button onclick="window.open('{% url "main:index" %}')" class="kontakty">Главная</button>
             </div>
             <div class="frame-10">
-              <button onclick="window.open('{% url "main:about" %}')" class="kontakty">Онас</button>
+                <button onclick="window.open('{% url "main:contacts" %}')" class="kontakty">Контакты</button>
             </div>
             <div class="frame-10">
-              <button onclick="window.open('{% url "map:map" %}')" class="kontakty">Карта</button>
+                <button onclick="window.open('{% url "map:map" %}')" class="kontakty">Карта</button>
             </div>
             <button onclick="window.open(`{% url "users:login" %}`)" class="frame-11"><p class="vhod">Вход</p></button>
           </div>
@@ -41,17 +41,9 @@
             src="https://static.overlay-tech.com/assets/7a13c1b3-6ee3-48ad-98ef-7dd12e3a638c.png"
           />
           <p class="interaktivnaja-karta-art-ob-ektov-goroda">
-            Интерактивная карта арт-объектов города Екатеринбурга,
-            с описанием, возможностью фильтрации по типам
-            достопримечательностей и готовыми маршрутами.
           </p>
-          <h1 class="art-ekat-h1">ArtEkat</h1>
+          <h1 class="art-ekat-h1"></h1>
           <p class="proekt-sozdannyj-komandoj-jentuziastov">
-            Проект, созданный командой энтузиастов, направленный
-            на повышение осведомленности местных жителей и
-            туристов. Главная задача - показать не только
-            популярные места, но и малоизвестные жемчужины
-            уличного искусства.
           </p>
         </div>
         <div class="frame-3">

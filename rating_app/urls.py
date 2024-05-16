@@ -4,5 +4,5 @@ from rating_app import views
 app_name = 'rating'
 
 urlpatterns = [
-    path('<int:id>', views.post_detailview, name='post'),
+    path('<str:slug>', views.post_detailview, name='post'),
 ]

@@ -7,107 +7,170 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Карта - ArtEkat</title>
 </head>
-<link rel="stylesheet" href="{% static "deps/css/mapStyle.css" %}"/>
-<style>
-  @import url('https://fonts.google.com/share?selection.family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900');
-</style>
-<body>
-    <div class="karta">
-        <div class="relative-wrapper-one">
-          <div class="group-1">
-            <div class="flex-wrapper-one">
-              <div class="flex-wrapper-two">
-                <img
-                    alt=""
-                    class="post"
-                    src="https://static.overlay-tech.com/assets/43c5983a-3d2e-48b0-add5-4f73581764a3.svg"
-                />
-                <img
-                    alt=""
-                    class="vk"
-                    src="https://static.overlay-tech.com/assets/1a4c74e3-b0ad-452f-af56-33c80a523934.svg"
-                />
-                <img
-                  alt=""
-                  class="vector-3"
-                  src="https://static.overlay-tech.com/assets/0e9551c6-82d5-48da-990c-91dfbaaa9a5d.svg"
-                /><img
-                  alt=""
-                  class="vector-4"
-                  src="https://static.overlay-tech.com/assets/5a474ce2-96d0-45b6-ae82-ba29f4917282.svg"
-                />
-              </div>
+<link rel="stylesheet" href="{% static "deps/css/map2Style.css"%}"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<body class="body">
+    <div class="ordzhonikidzevskij-rajon">
+        <div class="frame-2">
+          <div class="frame-7">
+            <img
+              alt=""
+              class="compass"
+              src="https://static.overlay-tech.com/assets/10fabefc-392b-49e4-994e-8822f9d0fdf0.svg"
+            />
+            <button onclick="window.open(`{% url "main:about" %}`)" class="frame-10"><p class="o-nas">О нас</p></button>
+            <button onclick="window.open(`{% url "map:map" %}`)" class="frame-10"><p class="o-nas">Карта</p></button>
+            <div class="frame-10">
+              <button onclick="window.open(`{% url "main:contacts" %}`)" class="o-nas">Контакты</button>
+            </div>
+            <div class="frame-8">
+              <button onclick="window.open(`{% url "main:index" %}`)" class="o-nas">Главная</button>
+            </div>
+          </div>
+          <button onclick="window.open(`{% url "users:login" %} `)" class="frame-11"><p class="vhod">Вход</p></button>
+        </div>
+        <div class="flex-wrapper-one">
+          <div class="frame-41">
+            <p class="art-ob-ekty">Арт -объекты</p>
+          </div>
+          <div class="frame-60"><p class="rajony">Районы</p></div>
+        </div>
+        <button type="button" id="markLoc" onclick="addMarker()">Добавить метку на карту</button><br>
+        <div class="map">
+          <div class="favicon1">
+            <a href="{% url 'rating:post' "serdce-uralmasha" %}"><img
+                alt=""
+                class="installjacija"
+                src="{% static "deps/media/favicon3.png" %}"
+          />
+            </a>
+          </div>
+
+          <!-- <img
+          alt=""
+          class="group-43"
+          src="https://static.overlay-tech.com/assets/4b97bc2f-0026-4fc3-b317-15da3f709298.svg"
+        /> -->
+        </div>
+        <!-- <img
+          alt=""
+          class="group-43"
+          src="https://static.overlay-tech.com/assets/4b97bc2f-0026-4fc3-b317-15da3f709298.svg"
+        /> -->
+        <div class="frame-80">
+            <div class="flex-wrapper-two">
+                <!-- <div class="spray-paint">
+                    <img
+                      alt=""
+                      class="group"
+                      src="https://static.overlay-tech.com/assets/aa2a1755-0667-4429-bbf1-f8c16c345fb6.svg"
+                    />
+                  </div> -->
               <img
                 alt=""
-                class="vector-5"
-                src="https://static.overlay-tech.com/assets/b58ea772-c647-4ff8-80ae-e17fa15c21a8.svg"
-              /><img
-                alt=""
-                class="vector-6"
-                src="https://static.overlay-tech.com/assets/615c668f-17c8-4898-8ebd-ed761c623d5f.svg"
+                class="installjacija"
+                src="https://static.overlay-tech.com/assets/3a9b159f-cd3f-4d99-a433-b2a36feb5b42.svg"
               />
-              <div class="flex-wrapper-three">
-                <img
-                  alt=""
-                  class="vector-7"
-                  src="https://static.overlay-tech.com/assets/c2d75099-97c6-4130-a0b9-078f6cd0f8ed.svg"
-                /><img
-                  alt=""
-                  class="vector-8"
-                  src="https://static.overlay-tech.com/assets/6560be93-2884-433a-8f1f-4d7069d49fb8.svg"
-                />
-              </div>
+            </div>
+            <div class="flex-wrapper-three">
+              <button class="grafiti">Инсталляция</button>
+            </div>
+            <div class="flex-wrapper-two">
               <img
                 alt=""
-                class="vector-9"
-                src="https://via.placeholder.com/126.5x90.5"
+                class="skul-ptura"
+                src="https://static.overlay-tech.com/assets/9d1cddc1-9877-475d-a4e2-162a7d1d6982.svg"
               /><img
                 alt=""
-                class="vector-10"
-                src="https://static.overlay-tech.com/assets/86dfce3e-d1d0-402d-aa23-ac39b2958b99.svg"
-              /><img
-                alt=""
-                class="vector-11"
-                src="https://static.overlay-tech.com/assets/5ebeaad5-bae2-4503-bfed-0516cb71cb3f.svg"
-              /><img
-                alt=""
-                class="vector-12"
-                src="https://static.overlay-tech.com/assets/1d79a2af-0d89-4f99-be41-484eaa2d544d.svg"
+                class="skul-ptura"
+                src="https://static.overlay-tech.com/assets/1d7c15fa-bcf1-4405-844e-e93466963830.svg"
               />
+            </div>
+            <div class="flex-wrapper-five">
+              <button class="skul-ptura-pamjatniki-statui">
+                Скульптуры, статуи
+              </button>
+              <button class="skul-ptura-pamjatniki-statui">Стела</button>
             </div>
             <img
               alt=""
-              class="vector-21"
-              src="https://static.overlay-tech.com/assets/754d8ef0-2326-4f9f-868a-adb90c142b16.svg"
+              class="stenografija"
+              src="https://static.overlay-tech.com/assets/dc82ad64-076e-4961-aeb7-2479041cf6de.svg"
             />
+            <button class="stenografija-two">Стенография</button>
           </div>
+        <div class="frame-3">
           <img
             alt=""
-            class="group-2"
-            src="https://static.overlay-tech.com/assets/6ba16ca5-ffd4-404f-b6c0-e726ee06743c.svg"
+            class="compass-two"
+            src="https://static.overlay-tech.com/assets/abc1e496-187f-46d6-8657-4f0548a78334.svg"
           />
-          <div class="frame-27">
-            <div class="group-12">
-              <div class="frame-26">
-                <button class="frame-28"><p class="glavnaja"><a href={% url "main:index"%}>Главная</a></p></button>
-              </div>
-              <button onclick="window.open(`inputInSys.html`)" class="frame-28"><p class="vhod">Вход</p></button>
-              <button class="frame-28"><p class="vhod">О нас</p></button>
-            </div>
-            <img
+          <div>
+            <div class="mainAndVk">
+              <img
               alt=""
-              class="group-7"
-              src="https://static.overlay-tech.com/assets/dad6bf7f-e8a3-484c-9754-98ac15893ea4.svg"
-            />
+              class="mail"
+              src="https://static.overlay-tech.com/assets/5f45eb8a-7019-4466-9034-b30f6ed00a19.svg"
+              />
+              <img
+              alt=""
+              class="mail"
+              src="https://static.overlay-tech.com/assets/2c6719c0-3c27-4139-9d74-a34b43f0ab34.svg"
+              />
+          </div>
           </div>
         </div>
-        <button class="frame-41">Фильтр</button>
-        <div><!-- Include here the component "Frame23" --></div>
-        <img
-          alt=""
-          class="group-5"
-          src="https://static.overlay-tech.com/assets/a3cb24c9-e068-405d-b5ed-c87c9e23096a.svg"
-        />
       </div>
+      <div id="marker"></div>
+      <div id="custom-popup"></div>
+      <div id="custom-window"></div>
+      <script src="indexMap.js"></script>
+      <script>
+        addMarker = function () {
+          var newMarkerGroup = new L.layerGroup();
+          map.addLayer(newMarkerGroup);
+          map.on('click', function (e) {
+            var markersCount = newMarkerGroup.getLayers().length;
+            if (markersCount < 1) {
+              var mark = L.marker(e.latlng, { icon: userIcon }).addTo(newMarkerGroup);
+              mark._leaflet_id = null;
+              mark
+                .bindPopup(createPlaceForm(mark, "Новое место", "Описание", isVisited = false, isPersonalMarker = true))
+                .openPopup();
+              return;
+            }
+
+          });
+        }
+      </script>
+        <script>
+          var checkbox1 = document.getElementById("greenmarkertoggle");
+          var checkbox2 = document.getElementById("bluemarkertoggle");
+          function handleCheckbox() {
+            if (checkbox1.checked) {
+              map.addLayer(layer1);
+            } else {
+              map.removeLayer(layer1);
+            }
+
+            if (checkbox2.checked) {
+              map.addLayer(layer2);
+            } else {
+              map.removeLayer(layer2);
+            }
+          }
+          checkbox1.addEventListener('change', handleCheckbox);
+          checkbox2.addEventListener('change', handleCheckbox);
+        </script>
+        <script>
+          var checkbox = document.querySelector('.cityFilter');
+          checkbox.addEventListener('change', function () {
+            if (this.checked) {
+              console.log("Checked");
+            } else {
+              console.log("Not checked");
+            }
+          });
+        </script>
 </body>
 </html>
