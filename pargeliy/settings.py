@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'main',
     'map',
     'users',
+    'rating_app'
 ]
 
 MIDDLEWARE = [
@@ -143,3 +144,4 @@ INTERNAL_IPS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'users.User'
 DJANGO_PASSWORD_EYE_INCLUDE_FONT_AWESOME = False
+

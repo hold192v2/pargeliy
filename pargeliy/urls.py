@@ -19,11 +19,14 @@ from django.urls import path, include
 
 from pargeliy.settings import DEBUG
 
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls', namespace='main')),
     path('map/', include('map.urls', namespace='map')),
     path('user/', include('users.urls', namespace='user')),
+    path('rating/', include('rating_app.urls', namespace='rating'))
 ]
 if DEBUG:
     urlpatterns += [
