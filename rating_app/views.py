@@ -6,12 +6,12 @@ from map.models import Cardss
 from .forms import CommentForm
 from .models import Comment
 
-@login_required
+
 def post_detailview(request, slug, *args, **kwargs):
     user = request.user
     post = Cardss.objects.get(slug=slug)
     cf = CommentForm(data=request.POST or None)
-    comments = Comment.objects.filter(card=post).order_by("-slug")
+    comments = Comment.objects.filter(card=post).order_by("-date_posted")
     if request.method == 'POST':
         if cf.is_valid():
             content = request.POST.get('content')

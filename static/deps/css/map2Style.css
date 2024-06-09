@@ -9,7 +9,7 @@
     flex-direction: column;
     align-items: flex-start;
     position: relative;
-    height: 225vh;
+    height: 180vh;
   }
   .frame-2 {
     background: linear-gradient(
@@ -147,8 +147,9 @@
     padding: 35px 228px 43px 40px;
     display: flex;
     align-items: flex-start;
-    position: relative;
+    position: absolute;
     right: -1px;
+    bottom: 1195px;
   }
   .flex-wrapper-two {
     margin-right: 38px;
@@ -245,8 +246,9 @@
     margin-right: 10px;
   }
   .map{
-    height: 1838px;
-    width: 2038px;
+    height: 100vh;
+    width: 200vh;
+    background-size: cover;
     background-image: url("https://static.overlay-tech.com/assets/4b97bc2f-0026-4fc3-b317-15da3f709298.svg");
   }
   .favicon1{

@@ -1,22 +1,26 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>{{ object.name }}</title>
 </head>
 <body>
     <img src="{{ object.image.url }}"  alt="{{ object.name }}">
-    <p>{{ object.image }} {{ object.name }}</p>
+    <p>{{ object.name }}</p>
+    <p>{{ object.image.url }}</p>>
     <p>Автор: {{ object.author}}</p>
     <p>Адрес: {{ object.adress }}</p>
     <p>Информация об Арт-объекте: {{ object.info }}</p>
     <form method="POST">
-
-        {% csrf_token %}
-        {{comment_form}}
-        <div class="form-group">
-            <button class="btn btn-primary btn-block create-account" >Оставить отзыв</button>
-        </div>
+        {% if user.is_authenticated %}
+            {% csrf_token %}
+            {{comment_form}}
+            <div class="form-group">
+                <button class="btn btn-primary btn-block create-account" >Оставить отзыв</button>
+            </div>
+        {% endif %}
     </form>
     {% for comment in comments %}
   <blockquote class="blockquote">
