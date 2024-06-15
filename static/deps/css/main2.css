@@ -162,15 +162,17 @@ body {
   .vk{
     height: 70px;
     width: 70px;
-    background-image: url("../media/Vk.jpg");
+    background-image: url("../media/vk (2).svg");
     border: none !important;
+    border-radius: 20px;
   }
   .mail{
     height: 70px;
     width: 70px;
     margin-right: 10px;
-    background-image: url("../media/Mail.jpg");
+    background-image: url("../media/mail.svg");
     border: none !important;
+    border-radius: 20px;
   }
   .mainAndVk{
     display: flex;

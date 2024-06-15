@@ -1,3 +1,7 @@
+body{
+  font-family: "Raleway", sans-serif;
+}
+
 .body{
     margin: 0;
     overflow-x: hidden;
@@ -44,7 +48,6 @@
     justify-content: center;
   }
   .kontakty {
-    font-family: "Raleway";
     font-size: 26px;
     font-weight: 700;
     line-height: normal;
@@ -74,7 +77,6 @@
     border: none !important;
   }
   .vhod {
-    font-family: "Raleway";
     font-size: 26px;
     font-weight: 700;
     line-height: 55px;
@@ -94,7 +96,6 @@
     position: relative;
   }
   .art-ob-ekty {
-    font-family: "Raleway";
     font-size: 24px;
     font-weight: 600;
     line-height: 47px;
@@ -111,7 +112,6 @@
     position: relative;
   }
   .rajony {
-    font-family: "Raleway";
     font-size: 24px;
     font-weight: 600;
     line-height: 47px;
@@ -170,7 +170,6 @@
     align-items: flex-start;
   }
   .grafiti {
-    font-family: "Raleway";
     font-size: 24px;
     font-weight: 700;
     line-height: normal;
@@ -192,7 +191,6 @@
     align-items: flex-start;
   }
   .skul-ptura-pamjatniki-statui {
-    font-family: "Raleway";
     font-size: 24px;
     font-weight: 700;
     line-height: normal;
@@ -203,7 +201,6 @@
     margin-bottom: 142px;
   }
   .stenografija-two {
-    font-family: "Raleway";
     font-size: 24px;
     font-weight: 700;
     line-height: normal;
@@ -233,9 +230,12 @@
   }
   .map{
     height: 1626px;
-    width: 1816px;
-    background-image: url("Zhelezn.jpg");
-    margin-left: 3%;
+    width: 1460px;
+    background-image: url("../media/Zhelezn.svg");
+    object-fit: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    margin-left: 2%;
   }
   .favicon1{
     display: flex;
@@ -313,7 +313,6 @@
     background-color: rgb(182, 88, 88);
   }
   .knopkaMarsrut {
-    font-family: "Raleway";
     position: relative;
     font-weight: normal;
     font-style: normal;
@@ -333,7 +332,6 @@
     background-color: rgb(182, 88, 88);
   }
   .knopkaSort{
-    font-family: "Raleway";
     font-weight: normal;
     font-style: normal;
     font-size: 24px;
@@ -363,22 +361,23 @@
   .vk{
     height: 70px;
     width: 70px;
-    background-image: url("Vk.jpg");
+    background-image: url("../media/vk (2).svg");
     border: none !important;
+    border-radius: 20px;
   }
   .mail{
     height: 70px;
     width: 70px;
     margin-right: 10px;
-    background-image: url("Mail.jpg");
+    background-image: url("../media/mail.svg");
     border: none !important;
+    border-radius: 20px;
   }
   .groupFav{
     height: 75px;
     width: 50px;
   }
   .sortPodtver {
-    font-family: "Raleway";
     font-weight: normal;
     font-style: normal;
     font-size: 24px;
@@ -411,7 +410,7 @@
   }
   .faviconTime21{
     position: relative;
-    left: 1260px;
+    left: 904px;
     top: 820px;
     width: 50px;
     height: 75px;

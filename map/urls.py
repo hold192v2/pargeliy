@@ -4,11 +4,12 @@ from map import views
 app_name = 'map'
 
 urlpatterns = [
-    path('map/', views.map, name='map'),
-    path('installationmap/', views.Installation, name='installationmap'),
-    path('sculpturemap/', views.Sculpture, name='sculpturemap'),
-    path('stellamap/', views.Stella, name='stellamap'),
-    path('stenografymap/', views.Stenografy, name='stenografymap'),
-    path('maps/', views.maps, name='maps'),
+    path('Ordzmap/', views.map, name='map'),
+    path('Chkalovmap/', views.Chkalovsky, name='chkalovsky'),
+    path('Kirovmap/', views.Kirovsky, name='kirovsky'),
+    path('Leninmap/', views.Leninsky, name='leninsky'),
+    path('Oktyabrmap/', views.Oktyabrsky, name='oktyabrsky'),
+    path('VerhIsetmap/', views.VerhIsetsky, name='verhisetsky'),
+    path('Zheleznmap/', views.Zhelezn, name='zhelezn'),
     path('handle_rating/', views.handle_rating, name='handle_rating'),
 ]
