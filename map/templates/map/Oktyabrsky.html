@@ -1,0 +1,177 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="{% static "deps/css/OktyabrskyStyle.css" %}"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<body class="body">
+    <div class="ordzhonikidzevskij-rajon">
+        <div class="frame-2">
+          <div class="frame-7">
+            <img
+              alt=""
+              class="compass"
+              src="https://static.overlay-tech.com/assets/6a2b1154-5ade-42dd-a20a-10e0e46a9fc9.svg"
+            />
+            <div class="frame-10">
+              <button onclick="window.open(`kontakt.html`)" class="kontakty">Контакты</button>
+            </div>
+            <div class="frame-10">
+              <button onclick="window.open(`main2.html`)" class="kontakty">Главная</button>
+            </div>
+            <div class="frame-10">
+              <button onclick="window.open(`oNas.html`)" class="kontakty">О&nbsp;нас</button>
+            </div>
+            <button onclick="window.open(`input.html`)" class="frame-11"><p class="vhod">Вход</p></button>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: row;">
+          <form class="districts">
+            <select class="knopkaSort" id="elementType">
+              <option value="all">Арт-объекты</option>
+              <option value="element1">Инсталляция</option>
+              <option value="element2">Стела</option>
+              <option value="element3">Скульптура</option>
+              <option value="element4">Стенография</option>
+            </select>
+          </form>
+          <button onclick="sortElements()" class="sortPodtver">Сортировать</button>
+          <form class="districts">
+              <label for="fruits"></label><select class="knopkaSort" id="pageSelect" onchange="redirectToPage()">
+              <option value="{% url "map:oktyabrsky" %}">Октябрьский</option>
+              <option value="{% url "map:leninsky" %}">Ленинский</option>
+              <option value="{% url "map:kirovsky" %}">Кировский</option>
+              <option value="{% url "map:chkalovsky" %}">Чкаловский</option>
+              <option value="{% url "map:map" %}">Орджоникидзевский</option>
+              <option value="{% url "map:verhisetsky" %}">Верх-Исетский</option>
+              <option value="{% url "map:zhelezn" %}">Железнодорожный</option>
+            </select>
+          </form>
+        </div>
+        <div class="howSort"></div>
+        <div class="map" id="map"> 
+          <!-- <div class="">
+            <div class="place" data-id="11">
+              <img 
+                id="element3"
+                class="sortable" 
+                src="Group44.png"
+              />
+            </div>
+          </div> -->
+          <div class="faviconTime21">
+            <div class="place" data-id="21">
+              <img
+                alt=""
+                class="sortable"
+                id="element1"
+                src="{% static "deps/media/Group 42.svg" %}"
+              />  
+            </div> 
+          </div> 
+          <div class="faviconTime22">
+            <div class="place" data-id="22">
+              <img
+                alt=""
+                class="sortable"
+                id="element1"
+                src="{% static "deps/media/Group 42.svg" %}"
+              />  
+            </div> 
+          </div> 
+          <!-- <div class="faviconTime3">
+            <div class="place" data-id="3">  
+              <img
+                alt=""
+                class="sortable"
+                id="element2"
+                src="Group46.png"
+              />  
+            </div> 
+          </div>  -->
+          <div class="faviconTime41">
+            <div class="place" data-id="41">  
+              <img
+                alt=""
+                class="sortable"
+                id="element4"
+                src="{% static "deps/media/Group 47.svg" %}"
+              />  
+            </div> 
+          </div> 
+          <div class="faviconTime42">
+            <div class="place" data-id="42">  
+              <img
+                alt=""
+                class="sortable"
+                id="element4"
+                src="{% static "deps/media/Group 47.svg" %}"
+              />  
+            </div> 
+          </div> 
+        </div>
+        <button class="knopkaMarsrut">Построить маршрут</button>
+        <div class="frame-3">
+          <img
+            alt=""
+            class="compass-two"
+            src="https://static.overlay-tech.com/assets/abc1e496-187f-46d6-8657-4f0548a78334.svg"
+          />
+          <div>
+            <div class="mainAndVk">
+              <form action="https://mail.google.com/mail/u/0/#search/artekat196@gmail.com?compose=jrjtWvPDnJBBWmKptLwgxLlTqklCxfqQvxDgwfRBfQDlBkGLFkKWHgNqKHDMDFCRkPVjwXvb" target="_blank">
+                <button class="mail"></button>
+              </form>
+              <form action="https://vk.com/id323571725" target="_blank">
+                <button class="vk"></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="marker"></div>
+      <div id="custom-popup"></div>
+      <div id="custom-window"></div>
+      <script src="{% static "deps/js/main.js" %}"></script>
+      <script>
+          const places = document.querySelectorAll('.place');
+
+          places.forEach(place => {
+              place.addEventListener('click', function() {
+                  const placeId = this.getAttribute('data-id');
+                  sessionStorage.setItem('selectedPlaceId', placeId); // Сохраняем ID выбранного места
+                  window.open('art.html', '_blank'); // Открываем информацию об объекте в новой вкладке
+              });
+          });
+        function sortElements() {
+          var selectedType = document.getElementById('elementType').value;
+      
+          var items = document.querySelectorAll('.sortable');
+          items.forEach(function(element) {
+            if (selectedType === 'all' || element.id === selectedType) {
+              element.classList.remove('hidden');
+            } else {
+              element.classList.add('hidden');
+            }
+          });
+        }
+      </script>
+        <script>
+
+        function redirectToPage() {
+          var select = document.getElementById("pageSelect");
+          var selectedValue = select.options[select.selectedIndex].value;
+
+          if (selectedValue) {
+            window.location = selectedValue;
+          }
+        }
+
+      </script>
+</body>
+</html>
