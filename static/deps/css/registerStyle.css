@@ -1,3 +1,6 @@
+body{
+  font-family: "Raleway" ,sans-serif;
+}
 .body{
     margin: 0;
     overflow-x: hidden;
@@ -12,8 +15,8 @@
     display: flex;
     align-items: flex-start;
     position: absolute;
-    left: -68px;
-    top: 5px;
+    left: -280px;
+    top: 0;
   }
   .frame-14 {
     width: 1920px;
@@ -38,12 +41,12 @@
   }
   .registracija {
     color: rgb(41,108,99);
+    font-weight: 600;
     margin-bottom: 45px;
-    margin-left: 210px;
+    margin-left: 190px;
     letter-spacing: 1.6px;
     font-family: var(--raleway-32-bold-family);
-    font-size: 28px;
-    font-weight: var(--raleway-32-bold-weight);
+    font-size: 30px;
     line-height: var(--raleway-32-bold-line-height);
   }
   .frame-15 {
@@ -55,28 +58,27 @@
   }
   .login {
     background-color: rgb(139,213,203);
-    color: rgb(255, 255, 255);
+    color: white;
     letter-spacing: 1.2px;
-    padding: 0px 250px 0px 0px;
     font-family: var(--raleway-24-semi-bold-family);
-    font-size: 26px;
-    font-weight: var(--raleway-24-semi-bold-weight);
+    font-size: 18px;
+    font-weight: 400;
     line-height: var(--raleway-24-semi-bold-line-height);
-    border: 0px;
-    padding: 10px;
-    margin-bottom: 20px;
+    border: 0;
+    padding: 15px;
+    margin-bottom: 25px;
     width: 600px;
   }
   .frame-16 {
     background-color: rgb(139,213,203);
-    margin-bottom: 36px;
+    margin-bottom: 20px;
     padding: 10px 537px 10px 10px;
     display: flex;
     align-items: center;
   }
   .frame-17 {
     background-color: rgb(139,213,203);
-    margin-bottom: 17px;
+    margin-bottom: 10px;
     margin-left: 157px;
     padding: 10px 71px;
     display: flex;
@@ -89,24 +91,33 @@
     flex-direction: row;
   }
   .uzhe-est-akkaunt {
+    margin-left: 10px;
+    margin-top: 15px;
     color: rgb(41,108,99);
     letter-spacing: 1.2px;
-    font-family: var(--raleway-24-semi-bold-family);
-    font-size: 28px;
+    font-size: 24px;
     font-weight: var(--raleway-24-semi-bold-weight);
     line-height: var(--raleway-24-semi-bold-line-height);
     
   }
+
   .vojti {
+    margin-top: -6px;
     color: rgb(151,73,73);
     text-decoration: underline;
     letter-spacing: 1.2px;
     font-family: var(--raleway-24-semi-bold-family);
-    font-size: 28px;
+    font-size: 24px;
     font-weight: var(--raleway-24-semi-bold-weight);
     line-height: var(--raleway-24-semi-bold-line-height);
     background: transparent;
     border: none !important;
+  }
+  .vojti:hover {
+    color: rgb(231, 115, 115);
+  }
+   .vojti:active {
+    color: rgb(196, 90, 90);
   }
   .frame-3 {
     background: linear-gradient(
@@ -141,15 +152,36 @@
     color: rgb(255, 255, 255);
     background-color: rgb(139,213,203);
     letter-spacing: 1.2px;
-    padding: 0px 250px 0px 0px;
+
     font-family: var(--raleway-24-semi-bold-family);
-    font-size: 26px;
-    font-weight: var(--raleway-24-semi-bold-weight);
+    font-size: 22px;
+    font-weight: 400;
     line-height: var(--raleway-24-semi-bold-line-height);
     padding:  10px 50px 10px 50px;
     margin-left: 150px;
     border: 0px;
   }
+  .inputButton:hover {
+      background-color: rgb(130, 201, 192);
+  }
   .inputButton:active {
-    background-color: rgb(122, 192, 183);
+    background-color: rgb(116, 187, 178);
+  }
+    .vk{
+    height: 70px;
+    width: 70px;
+    background-image: url("../media/Vk.jpg");
+    border: none !important;
+  }
+  .mail{
+    height: 70px;
+    width: 70px;
+    margin-right: 10px;
+    background-image: url("../media/Mail.jpg");
+    border: none !important;
+  }
+  .mainAndVk{
+    display: flex;
+    flex-direction: row;
+    margin-right: 10px;
   }

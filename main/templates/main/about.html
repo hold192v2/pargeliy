@@ -7,70 +7,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>О нас - ArtEkat</title>
 </head>
-<link rel="stylesheet" href="{% static "deps/css/main2.css"%}" />
+<link rel="stylesheet" href="{% static "deps/css/oNasStyle.css" %}"/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <body class="body">
-    <div class="glavnaja">
-        <div class="frame-2">
-          <div class="frame-7">
-            <img
-              alt=""
-              class="compass"
-              src="https://static.overlay-tech.com/assets/6a2b1154-5ade-42dd-a20a-10e0e46a9fc9.svg"
-            />
-            <div class="frame-10">
-                <button onclick="window.open('{% url "main:index" %}')" class="kontakty">Главная</button>
-            </div>
-            <div class="frame-10">
-                <button onclick="window.open('{% url "main:contacts" %}')" class="kontakty">Контакты</button>
-            </div>
-            <div class="frame-10">
-                <button onclick="window.open('{% url "map:map" %}')" class="kontakty">Карта</button>
-            </div>
-            {% if not user.is_authenticated %}
-          <button onclick="window.open(`{% url "users:login" %} `)" class="frame-11"><p class="vhod">Вход</p></button>
-          {% else %}
-              <p class="vhod">{{ user }}</p>
-            {% endif %}
-          </div>
-        </div>
-        <div class="frame-79">
+  <div class="o-nas">
+    <div class="frame-94">
+      <div class="frame-2">
+        <div class="frame-7">
           <img
             alt=""
-            class="group-2"
-            src="https://static.overlay-tech.com/assets/cb948451-2123-446a-9c34-cf50bb8e41f0.svg"
-          /><img
-            alt=""
-            class="group-3"
-            src="https://static.overlay-tech.com/assets/7a13c1b3-6ee3-48ad-98ef-7dd12e3a638c.png"
-          />
-          <p class="interaktivnaja-karta-art-ob-ektov-goroda">
-          </p>
-          <h1 class="art-ekat-h1"></h1>
-          <p class="proekt-sozdannyj-komandoj-jentuziastov">
-          </p>
-        </div>
-        <div class="frame-3">
-          <img
-            alt=""
-            class="compass-two"
+            class="compass1"
             src="https://static.overlay-tech.com/assets/6a2b1154-5ade-42dd-a20a-10e0e46a9fc9.svg"
           />
-          <div>
-            <div class="mainAndVk">
-                <img
-                alt=""
-                class="mail"
-                src="https://static.overlay-tech.com/assets/5f45eb8a-7019-4466-9034-b30f6ed00a19.svg"
-                />
-                <img
-                alt=""
-                class="mail"
-                src="https://static.overlay-tech.com/assets/2c6719c0-3c27-4139-9d74-a34b43f0ab34.svg"
-                />
-            </div>
+          <div class="frame-10">
+            <button onclick="window.open(`{% url "main:contacts" %}`)" class="kontakty">Контакты</button>
           </div>
+          <div class="frame-10">
+            <button onclick="window.open(`{% url "map:map" %}`)" class="kontakty">Карта</button>
+          </div>
+          <div class="frame-10">
+            <button onclick="window.open(`{% url "main:contacts" %}`)" class="kontakty">Главная</button>
+          </div>
+            <button onclick="window.open(`{% url "user:login" %}`)" class="frame-11"><p class="vhod">Вход</p></button>
+
         </div>
       </div>
+      <img
+        alt=""
+        class="online-learning-concept"
+        src="https://static.overlay-tech.com/assets/28ed423e-ee14-4cdf-9b45-10d251c3159f.svg"
+      /><img
+        alt=""
+        class="group-2"
+        src="https://static.overlay-tech.com/assets/35748f32-b8ac-4c99-96dc-1d7f5bd92caa.svg"
+      /><img
+        alt=""
+        class="frame"
+        src="https://static.overlay-tech.com/assets/fae4fb3e-13dc-42f6-9a8f-4051096f9091.svg"
+      />
+      <p class="servis-napravlen-na-povyshenie-osvedomlen">
+        Сервис направлен на повышение осведомленности местных
+        жителей и туристов. Главная задача - показать не
+        только популярные места, но и малоизвестные жемчужины
+        города.
+      </p>
+      <p class="my-komanda-pargelij-i-my-predstavljaem-n">
+        Мы команда Паргелий и мы представляем наш проект
+        «АrtEkat».<br />
+          <br />
+        В наше время появилось достаточное количество
+        арт-обьектов, но все они находятся в разных частях
+        города. И нет единого сайта на котором были бы
+        представлены достопримечательности с описанием и
+        маршрутами. Поэтому мы представляем вашему вниманию
+        сервис с интерактивной картой уличного искусства
+        города Екатеринбурга, на котором Вы сможете найти
+        описание представленных объектов и построить нужный
+        вам маршрут.
+      </p>
+    </div>
+    <div class="frame-3">
+      <img
+        alt=""
+        class="compass"
+        src="https://static.overlay-tech.com/assets/9e13adef-cd6a-4187-9315-6e9551029c9a.svg"
+      />
+      <div>
+        <div class="mainAndVk">
+          <form action="https://mail.google.com/mail/u/0/#search/artekat196@gmail.com?compose=jrjtWvPDnJBBWmKptLwgxLlTqklCxfqQvxDgwfRBfQDlBkGLFkKWHgNqKHDMDFCRkPVjwXvb" target="_blank">
+            <button class="mail"></button>
+          </form>
+          <form action="https://vk.com/id323571725" target="_blank">
+            <button class="vk"></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

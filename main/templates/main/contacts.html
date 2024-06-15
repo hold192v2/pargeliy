@@ -5,69 +5,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>О нас - ArtEkat</title>
+    <title>Контакты - ArtEkat</title>
 </head>
-<link rel="stylesheet" href="{% static "deps/css/main2.css"%}" />
+<link rel="stylesheet" href="{% static "deps/css/kontaktStyle.css" %}"/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <body class="body">
-    <div class="glavnaja">
+    <div class="kontakty">
         <div class="frame-2">
-          <div class="frame-7">
-            <img
-              alt=""
-              class="compass"
-              src="https://static.overlay-tech.com/assets/6a2b1154-5ade-42dd-a20a-10e0e46a9fc9.svg"
-            />
-            <div class="frame-10">
-                <button onclick="window.open('{% url "main:index" %}')" class="kontakty">Главная</button>
-            </div>
-            <div class="frame-10">
-                <button onclick="window.open('{% url "main:about" %}')" class="kontakty">Онас</button>
-            </div>
-            <div class="frame-10">
-                <button onclick="window.open('{% url "map:map" %}')" class="kontakty">Карта</button>
-            </div>
-            {% if not user.is_authenticated %}
-          <button onclick="window.open(`{% url "users:login" %} `)" class="frame-11"><p class="vhod">Вход</p></button>
-          {% else %}
-              <p class="vhod">{{ user }}</p>
+            <div class="frame-7">
+              <img
+                alt=""
+                class="compass1"
+                src="https://static.overlay-tech.com/assets/6a2b1154-5ade-42dd-a20a-10e0e46a9fc9.svg"
+              />
+              <div class="frame-10">
+                <button onclick="window.open(`{% url "main:index" %}`)" class="kontakty">Главная</button>
+              </div>
+              <div class="frame-10">
+                <button onclick="window.open(`{% url "map:map" %}`)" class="kontakty">Карта</button>
+              </div>
+              <div class="frame-10">
+                <button onclick="window.open(`{% url "main:about" %}`)" class="kontakty">О&nbsp;нас</button>
+              </div>
+              {% if not user.is_authenticated %}
+            <button onclick="window.open(`{% url "user:login" %}`)" class="frame-11"><p class="vhod">Вход</p></button>
+              {% else %}
+              <p class="vhod frame-11">{{ user }}</p>
             {% endif %}
+            </div>
           </div>
-        </div>
-        <div class="frame-79">
-          <img
+        <div class="frame-95">
+            <img
             alt=""
             class="group-2"
-            src="https://static.overlay-tech.com/assets/cb948451-2123-446a-9c34-cf50bb8e41f0.svg"
-          /><img
-            alt=""
-            class="group-3"
-            src="https://static.overlay-tech.com/assets/7a13c1b3-6ee3-48ad-98ef-7dd12e3a638c.png"
-          />
-          <p class="interaktivnaja-karta-art-ob-ektov-goroda">
-          </p>
-          <h1 class="art-ekat-h1"></h1>
-          <p class="proekt-sozdannyj-komandoj-jentuziastov">
-          </p>
+            src="https://static.overlay-tech.com/assets/06f27218-7088-4450-9d13-737baac8246a.svg"
+            />
+            <p class="esli-u-vas-est-art-ob-ekty-kotorymi-vy">
+            Если у Вас есть арт-объекты, которыми Вы хотите
+                поделиться, то жмите<br> кнопку либо пишите на почту artekat196&#64;gmail.com
+            </p>
+            <form action="https://forms.gle/eeGPEFqWhwPn1F3BA" target="_blank">
+                <button class="frame-92"><p class="klik">Клик</p></button>
+            </form>
+            <div class="frame-89">
+            <p class="timlid-anna-anna-pivovarova-me-di">
+              Тимлид Анна - Anna.Pivovarova&#64;urfu.me<br />
+              Дизайнер Дарья - Anikina.Daria&#64;urfu.me<br />
+              Разработчик Александр - AO.Grigoryev&#64;urfu.me<br />
+              Разработчик Кирилл - kirill.panshin&#64;urfu.ru<br />
+              Аналитик Руслан - Ruslan.Zagidullin&#64;at.urfu.ru
+            </p>
+        </div>
+        <p class="kontakty-nashej-koman-dy">
+            КОНТАКТЫ НАШЕЙ КОМАНДЫ
+        </p>
+        <p class="otprav-te-nam-svoj-art-ob-ekt">
+            Отправьте нам свой арт-объект
+        </p>
         </div>
         <div class="frame-3">
           <img
             alt=""
             class="compass-two"
-            src="https://static.overlay-tech.com/assets/6a2b1154-5ade-42dd-a20a-10e0e46a9fc9.svg"
+            src="https://static.overlay-tech.com/assets/d326b5ec-204f-4bef-a085-eebf9e7dde34.svg"
           />
           <div>
             <div class="mainAndVk">
-                <img
-                alt=""
-                class="mail"
-                src="https://static.overlay-tech.com/assets/5f45eb8a-7019-4466-9034-b30f6ed00a19.svg"
-                />
-                <img
-                alt=""
-                class="mail"
-                src="https://static.overlay-tech.com/assets/2c6719c0-3c27-4139-9d74-a34b43f0ab34.svg"
-                />
+              <form action="https://mail.google.com/mail/u/0/#search/artekat196@gmail.com?compose=jrjtWvPDnJBBWmKptLwgxLlTqklCxfqQvxDgwfRBfQDlBkGLFkKWHgNqKHDMDFCRkPVjwXvb" target="_blank">
+                <button class="mail"></button>
+              </form>
+              <form action="https://vk.com/id323571725" target="_blank">
+                <button class="vk"></button>
+              </form>
             </div>
           </div>
         </div>

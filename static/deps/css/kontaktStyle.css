@@ -1,3 +1,7 @@
+body {
+  font-family: "Raleway" ,sans-serif;
+}
+
 .body{
     margin: 0;
     overflow-x: hidden;
@@ -43,12 +47,11 @@
     align-items: center;
     justify-content: space-between;
     width: 59px;
-    margin-left: 700px;
+    margin-left: 600px;
     background: transparent;
     border: none !important;
   }
   .kontakty {
-    font-family: "Raleway";
     font-size: 24px;
     font-weight: 700;
     line-height: normal;
@@ -58,7 +61,6 @@
     border: none !important;
   }
   .vhod {
-    font-family: "Raleway";
     font-size: 24px;
     font-weight: 700;
     line-height: 55px;
@@ -82,9 +84,8 @@
     align-items: center;
     text-align: center;
     position: absolute;
-    right: 520px;
+    right: 695px;
     top: 464px;
-    font-family: "Raleway";
     font-size: 24px;
     font-weight: 600;
     line-height: 50px;
@@ -99,19 +100,38 @@
   }
   .frame-92 {
     background-color: rgba(41, 108, 99, 1);
-    padding: 9px 76px 10px 75px;
+
+    padding: 0 70px;
     display: flex;
     align-items: center;
     position: absolute;
-    right: 828px;
-    bottom: 223px;
+    right: 1081px;
+    bottom: 260px;
     border: none !important;
   }
+  .brown {
+    color: #974949
+  }
+   .frame-92:hover {
+    background-color: rgb(37, 98, 90);
+  }
   .frame-92:active {
-    background-color: rgb(35, 92, 84);
+    background-color: rgb(32, 84, 77);
+  }
+     .kontakty:hover {
+    color: rgb(24, 162, 154);
+  }
+  .kontakty:active {
+    color: rgb(33, 133, 114);
+  }
+
+     .vhod:hover {
+    color: rgb(24, 162, 154);
+  }
+  .vhod:active {
+    color: rgb(33, 133, 114);
   }
   .klik {
-    font-family: "Raleway";
     font-size: 20px;
     font-weight: 600;
     line-height: 31px;
@@ -124,37 +144,36 @@
     display: flex;
     align-items: center;
     position: absolute;
-    right: 735px;
+    right: 950px;
     top: 222px;
   }
   .timlid-anna-anna-pivovarova-me-di {
-    width: 398px;
+    width: 400px;
     text-align: center;
-    font-family: "Raleway";
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 400;
     line-height: 31px;
     color: rgba(237, 255, 250, 1);
+    padding: 5px 10px 5px 10px;
+
   }
   .kontakty-nashej-koman-dy {
-    font-family: "Raleway";
     font-size: 32px;
     font-weight: 600;
     line-height: 47px;
     color: rgba(41, 108, 99, 1);
     position: absolute;
-    right: 686px;
+    right: 910px;
     top: 100px;
   }
   .otprav-te-nam-svoj-art-ob-ekt {
-    font-family: "Raleway";
     font-size: 32px;
     font-weight: 600;
     line-height: 80px;
     color: rgba(41, 108, 99, 1);
     text-align: center;
     position: absolute;
-    right: 686px;
+    right: 905px;
     top: 405px;
   }
   .frame-3 {
@@ -175,20 +194,21 @@
   .vk{
     height: 70px;
     width: 70px;
-    background-image: url("Vk.jpg");
+    background-image: url("../media/Vk.jpg");
     border: none !important;
   }
   .mail{
     height: 70px;
     width: 70px;
     margin-right: 10px;
-    background-image: url("Mail.jpg");
+    background-image: url("../media/Mail.jpg");
     border: none !important;
   }
   .mainAndVk{
     display: flex;
     flex-direction: row;
     margin-right: 10px;
+
   }
   .o-nas {
     color: rgba(41, 108, 99, 1);

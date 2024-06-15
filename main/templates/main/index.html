@@ -5,10 +5,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Главная - ArtEkat</title>
 </head>
 <link rel="stylesheet" href="{% static "deps/css/main2.css" %}">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <body class="body">
     <div class="glavnaja">
         <div class="frame-2">
@@ -19,15 +22,19 @@
               src="https://static.overlay-tech.com/assets/6a2b1154-5ade-42dd-a20a-10e0e46a9fc9.svg"
             />
             <div class="frame-10">
-              <button onclick="window.open(`kontakt.html`)" class="kontakty">Контакты</button>
+              <button onclick="window.open(`{% url "main:contacts" %}`)" class="kontakty">Контакты</button>
             </div>
             <div class="frame-10">
-              <button onclick="window.open(`Ordzha.html`)" class="kontakty">Карта</button>
+              <button onclick="window.open(`{% url "map:map" %}`)" class="kontakty">Карта</button>
             </div>
             <div class="frame-10">
-              <button onclick="window.open(`oNas.html`)" class="kontakty">Онас</button>
+              <button onclick="window.open(`{% url "main:about" %}`)" class="kontakty">О&nbsp;нас</button>
             </div>
-            <button onclick="window.open(`input.html`)" class="frame-11"><p class="vhod">Вход</p></button>
+              {% if not user.is_authenticated %}
+            <button onclick="window.open(`{% url "user:login" %}`)" class="frame-11"><p class="vhod">Вход</p></button>
+              {% else %}
+              <p class="vhod frame-11">{{ user }}</p>
+            {% endif %}
           </div>
         </div>
         <div class="frame-79">

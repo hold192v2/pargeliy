@@ -1,5 +1,8 @@
 {% load static %}
-
+body {
+  font-family: "Raleway",sans-serif;
+  font-size: 12px;
+}
 .body{
     margin: 0;
     overflow-x: hidden;
@@ -43,7 +46,6 @@
     justify-content: center;
   }
   .kontakty {
-    font-family: "Raleway";
     font-size: 24px;
     font-weight: 700;
     line-height: normal;
@@ -53,18 +55,31 @@
     border: none !important;
 
   }
+     .kontakty:hover {
+    color: rgb(24, 162, 154);
+  }
+  .kontakty:active {
+    color: rgb(33, 133, 114);
+  }
+
+     .vhod:hover {
+    color: rgb(24, 162, 154);
+  }
+  .vhod:active {
+    color: rgb(33, 133, 114);
+  }
   .frame-11 {
     padding: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 59px;
-    margin-left: 700px;
+    margin-left: 580px;
     background: transparent;
     border: none !important;
   }
   .vhod {
-    font-family: "Raleway";
+    font-family: "Raleway", sans-serif;
     font-size: 24px;
     font-weight: 700;
     line-height: 55px;
@@ -91,9 +106,9 @@
   }
   .interaktivnaja-karta-art-ob-ektov-goroda {
     max-width: 667px;
-    font-family: "Raleway";
+    font-family: "Raleway", sans-serif;
     font-size: 24px;
-    font-weight: 600;
+    font-weight: 400;
     line-height: 40px;
     color: rgb(41,108,99);
     text-align: center;
@@ -116,9 +131,8 @@
   .proekt-sozdannyj-komandoj-jentuziastov {
     height: 249px;
     width: 890px;
-    font-family: "Raleway";
     font-size: 24px;
-    font-weight: 600;
+    font-weight: 400;
     line-height: 45px;
     color: rgb(41,108,99);
     display: flex;
