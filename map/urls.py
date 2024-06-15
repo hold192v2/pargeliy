@@ -9,4 +9,6 @@ urlpatterns = [
     path('sculpturemap/', views.Sculpture, name='sculpturemap'),
     path('stellamap/', views.Stella, name='stellamap'),
     path('stenografymap/', views.Stenografy, name='stenografymap'),
+    path('maps/', views.maps, name='maps'),
+    path('handle_rating/', views.handle_rating, name='handle_rating'),
 ]

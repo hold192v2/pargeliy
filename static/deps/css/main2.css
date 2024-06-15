@@ -1,3 +1,5 @@
+{% load static %}
+
 .body{
     margin: 0;
     overflow-x: hidden;
@@ -32,6 +34,7 @@
   .compass {
     width: 75px;
     height: 75px;
+    margin-right: 20px;
   }
   .frame-10 {
     padding: 10px;
@@ -80,7 +83,7 @@
     left: -50px;
   }
   .group-3 {
-    width: 1037.75px;
+    width: 808px;
     height: 658px;
     position: absolute;
     right: 150px;
@@ -107,7 +110,7 @@
     letter-spacing: 1.6px;
     font-family: var(--raleway-32-bold-family);
     font-size: 32px;
-    font-weight: var(--raleway-32-bold-weight);
+    font-weight: 700;
     line-height: var(--raleway-32-bold-line-height);
   }
   .proekt-sozdannyj-komandoj-jentuziastov {
@@ -142,15 +145,152 @@
     height: 75px;
     margin-right: 600px;
   }
-  .mail {
-    width: 70px;
+  .vk{
     height: 70px;
+    width: 70px;
+    background-image: url("../media/Vk.jpg");
+    border: none !important;
   }
-  .mail:not(:last-of-type) {
+  .mail{
+    height: 70px;
+    width: 70px;
     margin-right: 10px;
+    background-image: url("../media/Mail.jpg");
+    border: none !important;
   }
   .mainAndVk{
     display: flex;
     flex-direction: row;
     margin-right: 10px;
   }
+
+
+
+
+  .LocationPin1 {
+    left: 225px;
+    bottom: 110px;
+    position: absolute;
+    animation: moveUpDown 2s infinite;
+    animation-timing-function: ease-in-out; /* улучшает плавность анимации */
+  }
+.LocationPin2{
+  position: absolute;
+  animation: moveUpDown 1.5s infinite;
+  animation-timing-function: ease-in-out; /* улучшает плавность анимации */
+  right: 260px;
+  bottom: 50px
+}
+.LocationPin3{
+  position: absolute;
+  animation: moveUpDown 1.8s infinite;
+  animation-timing-function: ease-in-out; /* улучшает плавность анимации */
+  right: 710px;
+  top: 150px
+}
+.LocationPin4{
+  position: absolute;
+  animation: moveUpDown 2s infinite;
+  animation-timing-function: ease-in-out; /* улучшает плавность анимации */
+  right: 150px;
+  top: 45px
+}
+
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(20px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(20px) rotate(-360deg);
+  }
+}
+
+@keyframes antiOrbit {
+  0% {
+    transform: rotate(0deg) translateX(20px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg) translateX(20px) rotate(360deg);
+  }
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.spinning-image11{
+  left: 50px;
+  top: 380px;
+  position: absolute;
+  animation: orbit 4.5s linear infinite; /* Применяем анимацию движения по окружности */
+}
+.spinning-image12{
+  left: 550px;
+  top: 440px;
+  position: absolute;
+  animation: orbit 3.5s linear infinite; /* Применяем анимацию движения по окружности */
+}
+.spinning-image13{
+  right: 450px;
+  bottom: 180px;
+  position: absolute;
+  animation: orbit 4s linear infinite; /* Применяем анимацию движения по окружности */
+}
+.spinning-image14{
+  right: 350px;
+  top: 50px;
+  position: absolute;
+  animation: orbit 3s linear infinite; /* Применяем анимацию движения по окружности */
+}
+
+.spinning-imageAnti21 {
+  left: 850px;
+  top: 60px;
+  position: absolute;
+  animation: antiOrbit 4s linear infinite; /* Применяем анимацию движения по окружности */
+}
+.spinning-imageAnti22 {
+  right: 85px;
+  top: 200px;
+  position: absolute;
+  animation: antiOrbit 3.5s linear infinite; /* Применяем анимацию движения по окружности */
+}
+.spinning-imageAnti23 {
+  right: 125px;
+  top: 350px;
+  position: absolute;
+  animation: antiOrbit 4s linear infinite; /* Применяем анимацию движения по окружности */
+}
+.spinning-imageAnti31 {
+  left: 125px;
+  top: 10px;
+  position: absolute;
+  animation: antiOrbit 4s linear infinite; /* Применяем анимацию движения по окружности */
+}
+.spinning-imageAnti32 {
+  left: 960px;
+  top: 350px;
+  position: absolute;
+  animation: antiOrbit 3s linear infinite; /* Применяем анимацию движения по окружности */
+}
+.spinning-imageAnti33 {
+  left: 80px;
+  bottom: 130px;
+  position: absolute;
+  animation: antiOrbit 3.5s linear infinite; /* Применяем анимацию движения по окружности */
+}
+.spinning-imageAnti34 {
+  left: 1200px;
+  top: 40px;
+  position: absolute;
+  animation: antiOrbit 4.5s linear infinite; /* Применяем анимацию движения по окружности */
+}

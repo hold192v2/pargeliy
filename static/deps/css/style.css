@@ -1,0 +1,230 @@
+.glavnaja {
+    background-color: rgb(37, 97, 19);
+    overflow: hidden;
+    padding: 343px 220px 817px 145px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    
+  }
+  .relative-wrapper-one {
+    display: flex;
+    align-items: flex-start;
+    position: absolute;
+    left: -32px;
+    top: 564px;
+  }
+  .karta-art-ob-ektov-goroda-ekaterinburga {
+    width: 628px;
+    position: absolute;
+    left: 167px;
+    top: -107px;
+    font-family: "Raleway";
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 47px;
+    color: var(--white);
+  }
+  .karta-art-ob-ektov-goroda-ekaterinburga-emphasis-3 {
+    font-family: "Raleway";
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 47px;
+    color: var(--white);
+  }
+  .flex-wrapper-one {
+    background-size: 100% 100%;
+    background-position: center;
+    background-image: url("https://static.overlay-tech.com/assets/8ac71db5-e11c-491d-9d77-50b26b715c84.svg");
+    padding: 220px 331px 601px 349px;
+    position: relative;
+  }
+  .frame-34 {
+    background-color: var(--tomato);
+    border-radius: 20px;
+    padding: 26.5px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ikonki-markery-art-ob-ektov-na-karte {
+    font-family: "Raleway";
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 47px;
+    color: var(--white);
+  }
+  .art-ekat {
+    height: 62px;
+    width: 336px;
+    font-family: "Raleway";
+    font-size: 96px;
+    font-weight: 600;
+    line-height: 47px;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    margin-bottom: 518px;
+  }
+  .relative-wrapper-two {
+    margin-left: 140px;
+    position: relative;
+  }
+  .group-5 {
+    width: 2027px;
+    height: 876.48px;
+    position: absolute;
+    left: -347px;
+    bottom: -435.48px;
+  }
+  .frame-58 {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    left: -295px;
+    bottom: -825px;
+  }
+  .frame-23 {
+    width: 1780px;
+  }
+  .frame-18 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: -88px;
+    bottom: -527px;
+  }
+  .frame-35 {
+    background-color: var(--tomato);
+    margin-bottom: 20px;
+    border-radius: 25px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .otprav-te-nam-svoj-art-ob-ekt {
+    font-family: "Raleway";
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 80px;
+    color: var(--white);
+    text-align: center;
+  }
+  .frame-36 {
+    background-color: var(--tomato);
+    margin-bottom: 20px;
+    border-radius: 25px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 183px;
+  }
+  .esli-u-vas-est-art-ob-ekty-kotorymi-vy {
+    width: 1512px;
+    text-align: center;
+    font-family: "Raleway";
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 61px;
+    color: var(--white);
+  }
+  .esli-u-vas-est-art-ob-ekty-kotorymi-vy-emphasis-1 {
+    font-family: "Raleway";
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 61px;
+    color: var(--sandy-brown-1);
+  }
+  .frame-37 {
+    height: 60px;
+    width: 240px;
+  }
+  .frame-24 {
+    background-color: var(--transparent-white);
+    padding: 29px 64px 1116px;
+    position: relative;
+  }
+  .frame-18-two {
+    padding: 57.5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .skul-ptura {
+    width: 240px;
+    height: 240px;
+    margin-right: 68px;
+  }
+  .skul-ptury-pamjatniki-statui {
+    font-family: "Raleway";
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 47px;
+    color: var(--dark-slate-gray);
+  }
+  .frame-19 {
+    padding: 57.5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 64px;
+    top: 300.75px;
+  }
+  .frame-20 {
+    padding: 57.5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 64px;
+    top: 572.5px;
+  }
+  .frame-21 {
+    padding: 57.5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 64px;
+    top: 844.25px;
+  }
+  .frame-22 {
+    padding: 57.5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 64px;
+    top: 1116px;
+  }
+  .relative-wrapper-three {
+    display: flex;
+    align-items: flex-start;
+    position: absolute;
+    left: 1192px;
+    top: -27px;
+  }
+  .group-1 {
+    width: 954px;
+    height: 1180.67px;
+    position: relative;
+  }
+  .frame-57 {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: -1202px;
+    top: 17px;
+  }

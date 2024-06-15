@@ -5,9 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная - ArtEkat</title>
+    <title>Document</title>
 </head>
-<link rel="stylesheet" href="{% static "deps/css/main2.css"%}" />
+<link rel="stylesheet" href="{% static "deps/css/main2.css" %}">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 <body class="body">
     <div class="glavnaja">
@@ -19,15 +19,15 @@
               src="https://static.overlay-tech.com/assets/6a2b1154-5ade-42dd-a20a-10e0e46a9fc9.svg"
             />
             <div class="frame-10">
-              <button onclick="window.open('{% url "main:contacts" %}')" class="kontakty">Контакты</button>
+              <button onclick="window.open(`kontakt.html`)" class="kontakty">Контакты</button>
             </div>
             <div class="frame-10">
-              <button onclick="window.open('{% url "main:about" %}')" class="kontakty">Онас</button>
+              <button onclick="window.open(`Ordzha.html`)" class="kontakty">Карта</button>
             </div>
             <div class="frame-10">
-              <button onclick="window.open('{% url "map:map" %}')" class="kontakty">Карта</button>
+              <button onclick="window.open(`oNas.html`)" class="kontakty">Онас</button>
             </div>
-            <button onclick="window.open(`{% url "users:login" %}`)" class="frame-11"><p class="vhod">Вход</p></button>
+            <button onclick="window.open(`input.html`)" class="frame-11"><p class="vhod">Вход</p></button>
           </div>
         </div>
         <div class="frame-79">
@@ -38,7 +38,7 @@
           /><img
             alt=""
             class="group-3"
-            src="https://static.overlay-tech.com/assets/7a13c1b3-6ee3-48ad-98ef-7dd12e3a638c.png"
+            src="{% static "deps/media/Location.png"%}"
           />
           <p class="interaktivnaja-karta-art-ob-ektov-goroda">
             Интерактивная карта арт-объектов города Екатеринбурга,
@@ -47,31 +47,100 @@
           </p>
           <h1 class="art-ekat-h1">ArtEkat</h1>
           <p class="proekt-sozdannyj-komandoj-jentuziastov">
-            Проект, созданный командой энтузиастов, направленный
-            на повышение осведомленности местных жителей и
-            туристов. Главная задача - показать не только
-            популярные места, но и малоизвестные жемчужины
-            уличного искусства.
+            Арт-объекты не вечны - цените момент и наслаждайтесь уличным искусством, пока его не закрасили,
+            не демонтировали или оно не рассыпалось само собой.
           </p>
+          <img
+            alt=""
+            class="LocationPin1"
+            src={% static "deps/media/LocationPin1.png"%}
+          />
+          <img
+            alt=""
+            class="LocationPin2"
+            src={% static "deps/media/LocationPin2.png"%}
+          />
+          <img
+            alt=""
+            class="LocationPin3"
+            src={% static "deps/media/LocationPin3.png"%}
+          />
+          <img
+            alt=""
+            class="LocationPin4"
+            src={% static "deps/media/LocationPin4.png"%}
+          />
+
+          <img
+            alt=""
+            class="spinning-image11"
+            src={% static "deps/media/Cloud.png"%}
+          />
+          <img
+            alt=""
+            class="spinning-image12"
+            src={% static "deps/media/Cloud.png"%}
+          />
+          <img
+            alt=""
+            class="spinning-image13"
+            src={% static "deps/media/Cloud.png"%}
+          />
+          <img
+            alt=""
+            class="spinning-image14"
+            src={% static "deps/media/Cloud.png"%}
+          />
+          <img
+            alt=""
+            class="spinning-imageAnti21"
+            src={% static "deps/media/Cloud2.png"%}
+          />
+          <img
+            alt=""
+            class="spinning-imageAnti22"
+            src={% static "deps/media/Cloud2.png"%}
+          />
+          <img
+            alt=""
+            class="spinning-imageAnti23"
+            src={% static "deps/media/Cloud2.png"%}
+          />
+          <img
+            alt=""
+            class="spinning-imageAnti31"
+            src={% static "deps/media/Cloud3.png"%}
+          />
+          <img
+            alt=""
+            class="spinning-imageAnti32"
+            src={% static "deps/media/Cloud3.png"%}
+          />
+          <img
+            alt=""
+            class="spinning-imageAnti33"
+            src={% static "deps/media/Cloud3.png"%}
+          />
+          <img
+            alt=""
+            class="spinning-imageAnti34"
+            src={% static "deps/media/Cloud3.png"%}
+          />
         </div>
         <div class="frame-3">
           <img
             alt=""
             class="compass-two"
-            src="https://static.overlay-tech.com/assets/6a2b1154-5ade-42dd-a20a-10e0e46a9fc9.svg"
+            src="https://static.overlay-tech.com/assets/9e13adef-cd6a-4187-9315-6e9551029c9a.svg"
           />
           <div>
             <div class="mainAndVk">
-                <img
-                alt=""
-                class="mail"
-                src="https://static.overlay-tech.com/assets/5f45eb8a-7019-4466-9034-b30f6ed00a19.svg"
-                />
-                <img
-                alt=""
-                class="mail"
-                src="https://static.overlay-tech.com/assets/2c6719c0-3c27-4139-9d74-a34b43f0ab34.svg"
-                />
+              <form action="https://mail.google.com/mail/u/0/#search/artekat196@gmail.com?compose=jrjtWvPDnJBBWmKptLwgxLlTqklCxfqQvxDgwfRBfQDlBkGLFkKWHgNqKHDMDFCRkPVjwXvb" target="_blank">
+                <button class="mail"></button>
+              </form>
+              <form action="https://vk.com/id323571725" target="_blank">
+                  <button class="vk"></button>
+              </form>
             </div>
           </div>
         </div>

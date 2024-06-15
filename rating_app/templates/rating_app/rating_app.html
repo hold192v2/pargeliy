@@ -5,6 +5,11 @@
 <head>
   <meta charset="UTF-8">
   <title>{{ object.name }}</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- custom css & js -->
+    <link rel="stylesheet" href="{% static 'deps/css/rating.css' %}">
 </head>
 <body>
     <img src="{{ object.image.url }}"  alt="{{ object.name }}">
@@ -13,10 +18,17 @@
     <p>Автор: {{ object.author}}</p>
     <p>Адрес: {{ object.adress }}</p>
     <p>Информация об Арт-объекте: {{ object.info }}</p>
-    <form method="POST">
+    <form class="rate-form" action="" method="POST" id="{{object.id}}">
         {% if user.is_authenticated %}
             {% csrf_token %}
             {{comment_form}}
+            <div class="col text-center">
+                <button type="submit" class="fa fa-star fa-3x my-btn" id="first"></button>
+                <button type="submit" class="fa fa-star fa-3x my-btn" id="second"></button>
+                <button type="submit" class="fa fa-star fa-3x my-btn" id="third"></button>
+                <button type="submit" class="fa fa-star fa-3x my-btn" id="fourth"></button>
+                <button type="submit" class="fa fa-star fa-3x my-btn" id="fifth"></button>
+            </div>
             <div class="form-group">
                 <button class="btn btn-primary btn-block create-account" >Оставить отзыв</button>
             </div>
@@ -24,7 +36,7 @@
     </form>
     {% for comment in comments %}
   <blockquote class="blockquote">
-    <p>{{ comment.author}}, {{ comment.caption}}, {{ comment.date_posted}}</p>
+    <p>{{ comment.author}}, {{ comment.caption}}, {{ comment.date_posted}}, {{ comment.rate }}</p>
     <footer class="blockquote-footer">
      <cite>{{comment.user}}
         {% if  object.author.id == user.id %}
@@ -41,4 +53,8 @@
   </blockquote>
 {% endfor %}
 </body>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="{% static 'deps/js/rating.js' %}"></script>
 </html>
