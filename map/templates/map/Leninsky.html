@@ -1,15 +1,18 @@
 {% load static %}
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ленинский район - ArtEkat</title>
+    <link rel="shortcut icon" type="image/png" href="{% static "deps/media/logo.svg" %}"/>
 </head>
 <link rel="stylesheet" href="{% static "deps/css/LeninskyStyle.css" %}"/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <body class="body">
     <div class="ordzhonikidzevskij-rajon">
         <div class="frame-2">
@@ -20,44 +23,48 @@
               src="https://static.overlay-tech.com/assets/6a2b1154-5ade-42dd-a20a-10e0e46a9fc9.svg"
             />
             <div class="frame-10">
-              <button onclick="window.open(`kontakt.html`)" class="kontakty">Контакты</button>
+              <button onclick="window.open(`{% url "main:contacts" %}`)" class="kontakty">Контакты</button>
             </div>
             <div class="frame-10">
-              <button onclick="window.open(`main2.html`)" class="kontakty">Главная</button>
+              <button onclick="window.open(`{% url "main:index" %}`)" class="kontakty">Главная</button>
             </div>
             <div class="frame-10">
-              <button onclick="window.open(`oNas.html`)" class="kontakty">О&nbsp;нас</button>
+              <button onclick="window.open(`{% url "main:about" %}`)" class="kontakty">О&nbsp;нас</button>
             </div>
-            <button onclick="window.open(`input.html`)" class="frame-11"><p class="vhod">Вход</p></button>
+            {% if not user.is_authenticated %}
+            <button onclick="window.open(`{% url "user:login" %}`)" class="frame-11"><p class="vhod">Вход</p></button>
+              {% else %}
+              <p class="vhod frame-11">{{ user }}</p>
+            {% endif %}
           </div>
         </div>
         <div style="display: flex; flex-direction: row;">
           <form class="districts">
             <select class="knopkaSort" id="elementType">
-              <option value="all">Арт-объекты</option>
-              <option value="element1">Инсталляция</option>
-              <option value="element2">Стела</option>
-              <option value="element3">Скульптура</option>
-              <option value="element4">Стенография</option>
+              <option class="rajony" value="all">Арт-объекты</option>
+              <option class="rajony" value="element1">Инсталляция</option>
+              <option class="rajony" value="element2">Стела</option>
+              <option class="rajony" value="element3">Скульптура</option>
+              <option class="rajony" value="element4">Стенография</option>
             </select>
           </form>
           <button onclick="sortElements()" class="sortPodtver">Сортировать</button>
           <form class="districts">
               <label for="fruits"></label><select class="knopkaSort" id="pageSelect" onchange="redirectToPage()">
-              <option value="{% url "map:leninsky" %}">Ленинский</option>
-              <option value="{% url "map:kirovsky" %}">Кировский</option>
-              <option value="{% url "map:chkalovsky" %}">Чкаловский</option>
-              <option value="{% url "map:map" %}">Орджоникидзевский</option>
-              <option value="{% url "map:verhisetsky" %}">Верх-Исетский</option>
-              <option value="{% url "map:oktyabrsky" %}">Октябрьский</option>
-              <option value="{% url "map:zhelezn" %}">Железнодорожный</option>
+              <option class="rajony" value="{% url "map:leninsky" %}">Ленинский</option>
+              <option class="rajony" value="{% url "map:kirovsky" %}">Кировский</option>
+              <option class="rajony" value="{% url "map:chkalovsky" %}">Чкаловский</option>
+              <option class="rajony" value="{% url "map:map" %}">Орджоникидзевский</option>
+              <option class="rajony" value="{% url "map:verhisetsky" %}">Верх-Исетский</option>
+              <option class="rajony" value="{% url "map:oktyabrsky" %}">Октябрьский</option>
+              <option class="rajony" value="{% url "map:zhelezn" %}">Железнодорожный</option>
             </select>
           </form>
         </div>
         <div class="howSort"></div>
         <div class="map" id="map"> 
           <div class="faviconTime11">
-            <div class="place" data-id="11">
+            <div class="place" data-id="pamyatnik-klaviature">
               <img 
                 id="element3"
                 class="sortable" 
@@ -66,7 +73,7 @@
             </div>
           </div>
           <div class="faviconTime12">
-            <div class="place" data-id="12">
+            <div class="place" data-id="pamyatnik-gruppe-the-beatles">
               <img 
                 id="element3"
                 class="sortable" 
@@ -75,7 +82,7 @@
             </div>
           </div>
           <div class="faviconTime13">
-            <div class="place" data-id="13">
+            <div class="place" data-id="pamyatnik-gene-bukinu">
               <img 
                 id="element3"
                 class="sortable" 
@@ -84,7 +91,7 @@
             </div>
           </div>
           <div class="faviconTime21">
-            <div class="place" data-id="21">
+            <div class="place" data-id="tochka-zreniya">
               <img
                 alt=""
                 class="sortable"
@@ -94,7 +101,7 @@
             </div> 
           </div> 
           <div class="faviconTime22">
-            <div class="place" data-id="22">
+            <div class="place" data-id="barometr-nastroeniya">
               <img
                 alt=""
                 class="sortable"
@@ -104,7 +111,7 @@
             </div> 
           </div> 
           <div class="faviconTime23">
-            <div class="place" data-id="23">
+            <div class="place" data-id="el-neboskreb">
               <img
                 alt=""
                 class="sortable"
@@ -114,7 +121,7 @@
             </div> 
           </div> 
           <div class="faviconTime24">
-            <div class="place" data-id="24">
+            <div class="place" data-id="kamen-segmenty-3">
               <img
                 alt=""
                 class="sortable"
@@ -124,7 +131,7 @@
             </div> 
           </div> 
           <div class="faviconTime25">
-            <div class="place" data-id="25">
+            <div class="place" data-id="medved-grisha">
               <img
                 alt=""
                 class="sortable"
@@ -134,17 +141,17 @@
             </div> 
           </div> 
           <div class="faviconTime31">
-            <div class="place" data-id="31">  
+            <div class="place" data-id="kamennyj-most">
               <img
                 alt=""
                 class="sortable"
                 id="element2"
-                src="{% static "deps/media/Group 42.svg" %}"
+                src="{% static "deps/media/Group 46.svg" %}"
               />  
             </div> 
           </div> 
           <div class="faviconTime32">
-            <div class="place" data-id="32">  
+            <div class="place" data-id="uralskaya-mozaika">
               <img
                 alt=""
                 class="sortable"
@@ -154,7 +161,7 @@
             </div> 
           </div> 
           <div class="faviconTime41">
-            <div class="place" data-id="41">  
+            <div class="place" data-id="bumazhnyj-samolet">
               <img
                 alt=""
                 class="sortable"
@@ -164,7 +171,7 @@
             </div> 
           </div> 
           <div class="faviconTime42">
-            <div class="place" data-id="42">  
+            <div class="place" data-id="stena-angelov">
               <img
                 alt=""
                 class="sortable"
@@ -174,7 +181,7 @@
             </div> 
           </div> 
           <div class="faviconTime43">
-            <div class="place" data-id="43">  
+            <div class="place" data-id="gagarin">
               <img
                 alt=""
                 class="sortable"
@@ -184,7 +191,7 @@
             </div> 
           </div> 
           <div class="faviconTime44">
-            <div class="place" data-id="44">  
+            <div class="place" data-id="we-are-not-alone">
               <img
                 alt=""
                 class="sortable"
@@ -194,7 +201,7 @@
             </div> 
           </div> 
           <div class="faviconTime45">
-            <div class="place" data-id="45">  
+            <div class="place" data-id="nejronnyj-strit-art">
               <img
                 alt=""
                 class="sortable"
@@ -204,7 +211,7 @@
             </div> 
           </div> 
         </div>
-        <button class="knopkaMarsrut">Построить маршрут</button>
+        <button id="GIS" class="knopkaMarsrut">Построить маршрут</button>
         <div class="frame-3">
           <img
             alt=""
@@ -223,23 +230,448 @@
           </div>
         </div>
       </div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2>Выберите, что вы хотите сделать с объектом</h2>
+            <button class = "idServer" id="addToServer">Создать маршрут</button>
+            <button class="page-21" id="openPage">Открыть карточку</button>
+        </div>
+    </div>
       <div id="marker"></div>
       <div id="custom-popup"></div>
       <div id="custom-window"></div>
+
       <script src="{% static "deps/js/main.js" %}"></script>
+      <script>
+            const objects = document.querySelectorAll('.place');
+            const modal = document.getElementById('modal');
+            const addToServerBtn = document.getElementById('addToServer');
+            const openPageBtn = document.getElementById('openPage');
+            const activationStatus = {
+                        object1: false,
+                        object2: false,
+                        object3: false,
+                        object4: false,
+                        object5: false,
+                        object6: false,
+                        object7: false,
+                        object8: false,
+                        object9: false,
+                        object10: false,
+                        object11: false,
+                        object12: false,
+                        object13: false,
+                        object14: false,
+                        object15: false,
+                    };
+            const GIS = document.getElementById("GIS")
+            const object = []
+            let selectedObjectId = null;
+
+            objects.forEach(object => {
+                object.addEventListener('click', function() {
+                    selectedObjectId = this.getAttribute('data-id');
+                    console.log( selectedObjectId );
+                    if (selectedObjectId == "pamyatnik-klaviature"  && activationStatus["object1"]== true)
+                        addToServerBtn.textContent = "Убрать из маршрута"
+
+                    else
+                        if (selectedObjectId == "pamyatnik-klaviature" && activationStatus["object1"]== false)
+                            addToServerBtn.textContent = "Добавить в маршрут"
+                    //
+                    if (selectedObjectId == "pamyatnik-gruppe-the-beatles" && activationStatus["object2"]== true)
+                        addToServerBtn.textContent = "Убрать из маршрута"
+                    else
+                        if (selectedObjectId == "pamyatnik-gruppe-the-beatles" && activationStatus["object2"]== false)
+                            addToServerBtn.textContent = "Добавить в маршрут"
+                    //
+                    if (selectedObjectId == "pamyatnik-gene-bukinu" && activationStatus["object3"]== true)
+                        addToServerBtn.textContent = "Убрать из маршрута"
+                    else
+                        if (selectedObjectId == "pamyatnik-gene-bukinu" && activationStatus["object3"]== false)
+                            addToServerBtn.textContent = "Добавить в маршрут"
+
+                    if (selectedObjectId == "tochka-zreniya" && activationStatus["object4"]== true)
+                        addToServerBtn.textContent = "Убрать из маршрута"
+                    else
+                        if (selectedObjectId == "tochka-zreniya" && activationStatus["object4"]== false)
+                            addToServerBtn.textContent = "Добавить в маршрут"
+
+                    if (selectedObjectId == "barometr-nastroeniya" && activationStatus["object5"]== true)
+                        addToServerBtn.textContent = "Убрать из маршрута"
+                    else
+                        if (selectedObjectId == "barometr-nastroeniya" && activationStatus["object5"]== false)
+                            addToServerBtn.textContent = "Добавить в маршрут"
+                    ////55////555///5
+
+                    if (selectedObjectId == "el-neboskreb"  && activationStatus["object6"]== true)
+                        addToServerBtn.textContent = "Убрать из маршрута"
+
+                    else
+                        if (selectedObjectId == "el-neboskreb" && activationStatus["object6"]== false)
+                            addToServerBtn.textContent = "Добавить в маршрут"
+                    //
+                    if (selectedObjectId == "kamen-segmenty-3" && activationStatus["object7"]== true)
+                        addToServerBtn.textContent = "Убрать из маршрута"
+                    else
+                        if (selectedObjectId == "kamen-segmenty-3" && activationStatus["object7"]== false)
+                            addToServerBtn.textContent = "Добавить в маршрут"
+                    //
+                    if (selectedObjectId == "medved-grisha" && activationStatus["object8"]== true)
+                        addToServerBtn.textContent = "Убрать из маршрута"
+                    else
+                        if (selectedObjectId == "medved-grisha" && activationStatus["object8"]== false)
+                            addToServerBtn.textContent = "Добавить в маршрут"
+
+
+                    if (selectedObjectId == "kamennyj-most" && activationStatus["object9"]== true)
+                        addToServerBtn.textContent = "Убрать из маршрута"
+                    else
+                        if (selectedObjectId == "kamennyj-most" && activationStatus["object9"]== false)
+                            addToServerBtn.textContent = "Добавить в маршрут"
+
+                    if (selectedObjectId == "uralskaya-mozaika" && activationStatus["object10"]== true)
+                        addToServerBtn.textContent = "Убрать из маршрута"
+                    else
+                        if (selectedObjectId == "uralskaya-mozaika" && activationStatus["object10"]== false)
+                            addToServerBtn.textContent = "Добавить в маршрут"
+                    ///10///10///10
+
+                    if (selectedObjectId == "bumazhnyj-samolet"  && activationStatus["object11"]== true)
+                        addToServerBtn.textContent = "Убрать из маршрута"
+
+                    else
+                        if (selectedObjectId == "bumazhnyj-samolet" && activationStatus["object11"]== false)
+                            addToServerBtn.textContent = "Добавить в маршрут"
+                    //
+                    if (selectedObjectId == "stena-angelov" && activationStatus["object12"]== true)
+                        addToServerBtn.textContent = "Убрать из маршрута"
+                    else
+                        if (selectedObjectId == "stena-angelov" && activationStatus["object12"]== false)
+                            addToServerBtn.textContent = "Добавить в маршрут"
+                    //
+                    if (selectedObjectId == "gagarin" && activationStatus["object13"]== true)
+                        addToServerBtn.textContent = "Убрать из маршрута"
+                    else
+                        if (selectedObjectId == "gagarin" && activationStatus["object13"]== false)
+                            addToServerBtn.textContent = "Добавить в маршрут"
+
+
+                    if (selectedObjectId == "we-are-not-alone" && activationStatus["object14"]== true)
+                        addToServerBtn.textContent = "Убрать из маршрута"
+                    else
+                        if (selectedObjectId == "we-are-not-alone" && activationStatus["object14"]== false)
+                            addToServerBtn.textContent = "Добавить в маршрут"
+
+                    if (selectedObjectId == "nejronnyj-strit-art" && activationStatus["object15"]== true)
+                        addToServerBtn.textContent = "Убрать из маршрута"
+                    else
+                        if (selectedObjectId == "nejronnyj-strit-art" && activationStatus["object15"]== false)
+                            addToServerBtn.textContent = "Добавить в маршрут"
+
+                    modal.style.display = 'block';
+                });
+            });
+
+            addToServerBtn.addEventListener('click', function() {
+                if (selectedObjectId) {
+                    // Добавление ID объекта в список для отправки на сервер Django
+                    console.log(`Add object ID ${selectedObjectId} to server list`);
+                    if (object.includes(selectedObjectId)) {
+                        object.splice(object.indexOf(selectedObjectId), 1);
+                    }
+                    else
+                        object.push(selectedObjectId)
+                    console.log(objects)
+                    //1 if
+                    if (selectedObjectId == "pamyatnik-klaviature" && objects.item(0).classList.contains("active")){
+                        objects.item(0).classList.remove("active")
+                        activationStatus["object1"]= false
+                        }
+                    else
+                        if (selectedObjectId == "pamyatnik-klaviature" && !(objects.item(0).classList.contains("active"))) {
+                            objects.item(0).classList.add("active")
+                            activationStatus["object1"]= true
+                        }
+                    //2 if
+                    if (selectedObjectId == "pamyatnik-gruppe-the-beatles" && objects.item(1).classList.contains("active"))
+                    {
+                        objects.item(1).classList.remove("active")
+                        activationStatus["object2"]= false
+                    }
+
+                    else
+                        if (selectedObjectId == "pamyatnik-gruppe-the-beatles" && !(objects.item(1).classList.contains("active")))
+                        {
+                            objects.item(1).classList.add("active")
+                            activationStatus["object2"]= true
+                        }
+
+                    if (selectedObjectId == "pamyatnik-gene-bukinu" && objects.item(2).classList.contains("active"))
+                    {
+                        objects.item(2).classList.remove("active")
+                        activationStatus["object3"]= false
+                    }
+                    else
+                        if (selectedObjectId == "pamyatnik-gene-bukinu" && !(objects.item(2).classList.contains("active")))
+                            {
+                                objects.item(2).classList.add("active")
+                                activationStatus["object3"]= true
+                            }
+
+                    if (selectedObjectId == "tochka-zreniya" && objects.item(3).classList.contains("active"))
+                        {
+                        objects.item(3).classList.remove("active")
+                        activationStatus["object4"]= false
+                    }
+                    else
+                        if (selectedObjectId == "tochka-zreniya" && !(objects.item(3).classList.contains("active")))
+                            {
+                                objects.item(3).classList.add("active")
+                                activationStatus["object4"]= true
+                            }
+
+                    if (selectedObjectId == "barometr-nastroeniya" && objects.item(4).classList.contains("active"))
+                        {
+                        objects.item(4).classList.remove("active")
+                        activationStatus["object5"]= false
+                    }
+                    else
+                        if (selectedObjectId == "barometr-nastroeniya" && !(objects.item(4).classList.contains("active")))
+                            {
+                                objects.item(4).classList.add("active")
+                                activationStatus["object5"]= true
+                            }
+
+                        //55//////555//555/
+                    //1 if
+                    if (selectedObjectId == "el-neboskreb" && objects.item(5).classList.contains("active")){
+                        objects.item(5).classList.remove("active")
+                        activationStatus["object6"]= false
+                        }
+                    else
+                        if (selectedObjectId == "el-neboskreb" && !(objects.item(5).classList.contains("active"))) {
+                            objects.item(5).classList.add("active")
+                            activationStatus["object6"]= true
+                        }
+                    //2 if
+                    if (selectedObjectId == "kamen-segmenty-3" && objects.item(6).classList.contains("active"))
+                    {
+                        objects.item(6).classList.remove("active")
+                        activationStatus["object7"]= false
+                    }
+
+                    else
+                        if (selectedObjectId == "kamen-segmenty-3" && !(objects.item(6).classList.contains("active")))
+                        {
+                            objects.item(6).classList.add("active")
+                            activationStatus["object7"]= true
+                        }
+
+                    if (selectedObjectId == "medved-grisha" && objects.item(7).classList.contains("active"))
+                    {
+                        objects.item(7).classList.remove("active")
+                        activationStatus["object8"]= false
+                    }
+                    else
+                        if (selectedObjectId == "medved-grisha" && !(objects.item(7).classList.contains("active")))
+                            {
+                                objects.item(7).classList.add("active")
+                                activationStatus["object8"]= true
+                            }
+
+                    if (selectedObjectId == "kamennyj-most" && objects.item(8).classList.contains("active"))
+                        {
+                        objects.item(8).classList.remove("active")
+                        activationStatus["object9"]= false
+                    }
+                    else
+                        if (selectedObjectId == "kamennyj-most" && !(objects.item(8).classList.contains("active")))
+                            {
+                                objects.item(8).classList.add("active")
+                                activationStatus["object9"]= true
+                            }
+
+                    if (selectedObjectId == "uralskaya-mozaika" && objects.item(9).classList.contains("active"))
+                        {
+                        objects.item(9).classList.remove("active")
+                        activationStatus["object10"]= false
+                    }
+                    else
+                        if (selectedObjectId == "uralskaya-mozaika" && !(objects.item(9).classList.contains("active")))
+                            {
+                                objects.item(9).classList.add("active")
+                                activationStatus["object10"]= true
+                            }
+                    if (selectedObjectId == "bumazhnyj-samolet" && objects.item(10).classList.contains("active")){
+                        objects.item(10).classList.remove("active")
+                        activationStatus["object11"]= false
+                        }
+                    else
+                        if (selectedObjectId == "bumazhnyj-samolet" && !(objects.item(10).classList.contains("active"))) {
+                            objects.item(10).classList.add("active")
+                            activationStatus["object11"]= true
+                        }
+                    //2 if
+                    if (selectedObjectId == "stena-angelov" && objects.item(11).classList.contains("active"))
+                    {
+                        objects.item(11).classList.remove("active")
+                        activationStatus["object12"]= false
+                    }
+
+                    else
+                        if (selectedObjectId == "stena-angelov" && !(objects.item(11).classList.contains("active")))
+                        {
+                            objects.item(11).classList.add("active")
+                            activationStatus["object12"]= true
+                        }
+
+                    if (selectedObjectId == "gagarin" && objects.item(12).classList.contains("active"))
+                    {
+                        objects.item(12).classList.remove("active")
+                        activationStatus["object13"]= false
+                    }
+                    else
+                        if (selectedObjectId == "gagarin" && !(objects.item(12).classList.contains("active")))
+                            {
+                                objects.item(12).classList.add("active")
+                                activationStatus["object13"]= true
+                            }
+
+                    if (selectedObjectId == "we-are-not-alone" && objects.item(13).classList.contains("active"))
+                        {
+                        objects.item(13).classList.remove("active")
+                        activationStatus["object14"]= false
+                    }
+                    else
+                        if (selectedObjectId == "we-are-not-alone" && !(objects.item(13).classList.contains("active")))
+                            {
+                                objects.item(13).classList.add("active")
+                                activationStatus["object14"]= true
+                            }
+
+                    if (selectedObjectId == "nejronnyj-strit-art" && objects.item(14).classList.contains("active"))
+                        {
+                        objects.item(14).classList.remove("active")
+                        activationStatus["object15"]= false
+                    }
+                    else
+                        if (selectedObjectId == "nejronnyj-strit-art" && !(objects.item(14).classList.contains("active")))
+                            {
+                                objects.item(14).classList.add("active")
+                                activationStatus["object15"]= true
+                            }
+
+                    console.log(`Add object ID ${object} to server list`);
+                    modal.style.display = 'none';
+                }
+            });
+
+            openPageBtn.addEventListener('click', function() {
+                if (selectedObjectId) {
+                    let url = "";
+                    // Открытие страницы, связанной с выбранным ID
+                    if (selectedObjectId == "pamyatnik-klaviature")
+                        url = "{% url 'rating:post' "pamyatnik-klaviature"%}";
+                    if (selectedObjectId == "tochka-zreniya")
+                        url = "{% url 'rating:post' "tochka-zreniya"%}";
+                    if (selectedObjectId == "barometr-nastroeniya")
+                        url = "{% url 'rating:post' "barometr-nastroeniya"%}";
+                    if (selectedObjectId == "pamyatnik-gene-bukinu")
+                        url = "{% url 'rating:post' "pamyatnik-gene-bukinu"%}";
+                    if (selectedObjectId == "pamyatnik-gruppe-the-beatles")
+                        url = "{% url 'rating:post' "pamyatnik-gruppe-the-beatles"%}";
+
+
+                    if (selectedObjectId == "el-neboskreb")
+                        url = "{% url 'rating:post' "el-neboskreb"%}";
+                    if (selectedObjectId == "kamennyj-most")
+                        url = "{% url 'rating:post' "kamennyj-most"%}";
+                    if (selectedObjectId == "uralskaya-mozaika")
+                        url = "{% url 'rating:post' "uralskaya-mozaika"%}";
+                    if (selectedObjectId == "medved-grisha")
+                        url = "{% url 'rating:post' "medved-grisha"%}";
+                    if (selectedObjectId == "kamen-segmenty-3")
+                        url = "{% url 'rating:post' "kamen-segmenty-3"%}";
+
+                    if (selectedObjectId == "bumazhnyj-samolet")
+                        url = "{% url 'rating:post' "bumazhnyj-samolet"%}";
+                    if (selectedObjectId == "we-are-not-alone")
+                        url = "{% url 'rating:post' "we-are-not-alone"%}";
+                    if (selectedObjectId == "nejronnyj-strit-art")
+                        url = "{% url 'rating:post' "nejronnyj-strit-art"%}";
+                    if (selectedObjectId == "gagarin")
+                        url = "{% url 'rating:post' "gagarin"%}";
+                    if (selectedObjectId == "stena-angelov")
+                        url = "{% url 'rating:post' "stena-angelov"%}";
+
+                    window.open(url);
+                    console.log(`Open page related to object ID ${selectedObjectId}`);
+                    modal.style.display = 'none';
+                }
+            });
+
+            window.addEventListener('click', function(event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            });
+
+
+    GIS.addEventListener('click', function() {
+
+    const csrftoken = getCookie('csrftoken');
+
+    // Отправка данных на сервер Django
+    document.getElementById('GIS').addEventListener('click', function() {
+
+    const csrftoken = getCookie('csrftoken');
+
+    // Отправка данных на сервер Django
+    $.ajax({
+        url: 'POST/', // Здесь укажите путь к вашему Django view
+        type: 'POST',
+        contentType: 'application/json',
+        headers: { 'X-CSRFToken': csrftoken },
+        data: JSON.stringify( object ),
+        success: function(response) {
+            // После успешного ответа от сервера открываем ссылку
+            window.open(response.url, '_blank');
+        }
+    });
+});
+
+
+
+// Функция для получения CSRF-токена из куки
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }})
+
+      </script>
       <script>
           const places = document.querySelectorAll('.place');
 
           places.forEach(place => {
               place.addEventListener('click', function() {
                   const placeId = this.getAttribute('data-id');
-                  sessionStorage.setItem('selectedPlaceId', placeId); // Сохраняем ID выбранного места
-                  window.open('art.html', '_blank'); // Открываем информацию об объекте в новой вкладке
+                  sessionStorage.setItem('selectedPlaceId', placeId); // Сохраняем ID выбранного места// Открываем информацию об объекте в новой вкладке
               });
           });
         function sortElements() {
           var selectedType = document.getElementById('elementType').value;
-      
+
           var items = document.querySelectorAll('.sortable');
           items.forEach(function(element) {
             if (selectedType === 'all' || element.id === selectedType) {
@@ -250,7 +682,7 @@
           });
         }
       </script>
-    <script>
+      <script>
 
         function redirectToPage() {
           var select = document.getElementById("pageSelect");
@@ -262,5 +694,6 @@
         }
 
       </script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 </html>

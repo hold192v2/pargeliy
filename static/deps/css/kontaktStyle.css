@@ -101,11 +101,12 @@ body {
   .frame-92 {
     background-color: rgba(41, 108, 99, 1);
 
+    border-radius: 20px;
     padding: 0 70px;
     display: flex;
     align-items: center;
     position: absolute;
-    right: 1081px;
+    right: 1076px;
     bottom: 260px;
     border: none !important;
   }
@@ -137,6 +138,7 @@ body {
     line-height: 31px;
     color: rgba(237, 255, 250, 1);
     text-align: center;
+
   }
   .frame-89 {
     background-color: rgba(41, 108, 99, 1);
@@ -144,6 +146,7 @@ body {
     display: flex;
     align-items: center;
     position: absolute;
+    border-radius: 10px;
     right: 950px;
     top: 222px;
   }

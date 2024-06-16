@@ -5,10 +5,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Орджоникидзевский район - ArtEkat</title>
+    <link rel="shortcut icon" type="image/png" href="{% static "deps/media/logo.svg" %}"/>
 </head>
 <link rel="stylesheet" href="{% static "deps/css/OrdzhaStyle.css" %}"/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <body class="body">
     <div class="ordzhonikidzevskij-rajon">
         <div class="frame-2">
@@ -34,33 +38,33 @@
             {% endif %}
           </div>
         </div>
-        <div style="display: flex; flex-direction: row;">
+        <div style="display: flex; flex-direction: row; ">
           <form class="districts">
             <select class="knopkaSort" id="elementType">
-              <option value="all">Арт-объекты</option>
-              <option value="element1">Инсталляция</option>
-              <option value="element2">Стела</option>
-              <option value="element3">Скульптура</option>
-              <option value="element4">Стенография</option>
+              <option class="rajony" value="all">Арт-объекты</option>
+              <option class="rajony" value="element1">Инсталляция</option>
+              <option class="rajony" value="element2">Стела</option>
+              <option class="rajony" value="element3">Скульптура</option>
+              <option class="rajony" value="element4">Стенография</option>
             </select>
           </form>
           <button onclick="sortElements()" class="sortPodtver">Сортировать</button>
           <form class="districts">
               <label for="fruits"></label><select class="knopkaSort" id="pageSelect" onchange="redirectToPage()">
-              <option value="{% url "map:map" %}">Орджоникидзевский</option>
-              <option value="{% url "map:oktyabrsky" %}">Октябрьский</option>
-              <option value="{% url "map:leninsky" %}">Ленинский</option>
-              <option value="{% url "map:kirovsky" %}">Кировский</option>
-              <option value="{% url "map:chkalovsky" %}">Чкаловский</option>
-              <option value="{% url "map:verhisetsky" %}">Верх-Исетский</option>
-              <option value="{% url "map:zhelezn" %}">Железнодорожный</option>
+              <option class="rajony" value="{% url "map:map" %}">Орджоникидзевский</option>
+              <option class="rajony" value="{% url "map:oktyabrsky" %}">Октябрьский</option>
+              <option class="rajony" value="{% url "map:leninsky" %}">Ленинский</option>
+              <option class="rajony" value="{% url "map:kirovsky" %}">Кировский</option>
+              <option class="rajony" value="{% url "map:chkalovsky" %}">Чкаловский</option>
+              <option class="rajony" value="{% url "map:verhisetsky" %}">Верх-Исетский</option>
+              <option class="rajony" value="{% url "map:zhelezn" %}">Железнодорожный</option>
             </select>
           </form>
         </div>
         <div class="howSort"></div>
         <div class="map" id="map">
           <div class="faviconTime11">
-            <div class="place" data-id="11">
+            <div class="place" data-id="garmoniya">
               <img
                 id="element3"
                 class="sortable"
@@ -69,7 +73,7 @@
             </div>
           </div>
           <div class="faviconTime12">
-            <div class="place" data-id="12">
+            <div class="place" data-id="statui-moai">
               <img
                 id="element3"
                 class="sortable"
@@ -78,7 +82,7 @@
             </div>
           </div>
           <div class="faviconTime21">
-            <div class="place" data-id="2">
+            <div class="place" data-id="serdce-uralmasha">
               <img
                 alt=""
                 class="sortable"
@@ -98,7 +102,7 @@
             </div>
           </div>  -->
           <div class="faviconTime41">
-            <div class="place" data-id="41">
+            <div class="place" data-id="evropejskaya-norka">
               <img
                 alt=""
                 class="sortable"
@@ -108,7 +112,7 @@
             </div>
           </div>
           <div class="faviconTime42">
-            <div class="place" data-id="42">
+            <div class="place" data-id="larri">
               <img
                 alt=""
                 class="sortable"
@@ -118,7 +122,7 @@
             </div>
           </div>
         </div>
-        <button class="knopkaMarsrut">Построить маршрут</button>
+        <button id="GIS" class="knopkaMarsrut">Построить маршрут</button>
         <div class="frame-3">
           <img
             alt=""
@@ -136,19 +140,225 @@
             </div>
           </div>
         </div>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <h2>Выберите, что вы хотите сделать с объектом</h2>
+        <button class = "idServer" id="addToServer">Создать маршрут</button>
+        <button class="page-21" id="openPage">Открыть карточку</button>
+    </div>
+</div>
       </div>
       <div id="marker"></div>
       <div id="custom-popup"></div>
       <div id="custom-window"></div>
       <script src="{% static "deps/js/main.js" %}"></script>
       <script>
+            const objects = document.querySelectorAll('.place');
+            const modal = document.getElementById('modal');
+            const addToServerBtn = document.getElementById('addToServer');
+            const openPageBtn = document.getElementById('openPage');
+            const activationStatus = {
+                        object1: false,
+                        object2: false,
+                        object3: false,
+                        object4: false,
+                        object5: false,
+                    };
+            const GIS = document.getElementById("GIS")
+            const object = []
+            let selectedObjectId = null;
+
+            objects.forEach(object => {
+                object.addEventListener('click', function() {
+                    selectedObjectId = this.getAttribute('data-id');
+                    console.log( selectedObjectId );
+                    if (selectedObjectId == "garmoniya"  && activationStatus["object1"]== true)
+                        addToServerBtn.textContent = "Убрать из маршрута"
+
+                    else
+                        if (selectedObjectId == "garmoniya" && activationStatus["object1"]== false)
+                            addToServerBtn.textContent = "Добавить в маршрут"
+                    //
+                    if (selectedObjectId == "statui-moai" && activationStatus["object2"]== true)
+                        addToServerBtn.textContent = "Убрать из маршрута"
+                    else
+                        if (selectedObjectId == "statui-moai" && activationStatus["object2"]== false)
+                            addToServerBtn.textContent = "Добавить в маршрут"
+                    //
+                    if (selectedObjectId == "serdce-uralmasha" && activationStatus["object3"]== true)
+                        addToServerBtn.textContent = "Убрать из маршрута"
+                    else
+                        if (selectedObjectId == "serdce-uralmasha" && activationStatus["object3"]== false)
+                            addToServerBtn.textContent = "Добавить в маршрут"
+
+
+                    if (selectedObjectId == "evropejskaya-norka" && activationStatus["object4"]== true)
+                        addToServerBtn.textContent = "Убрать из маршрута"
+                    else
+                        if (selectedObjectId == "evropejskaya-norka" && activationStatus["object4"]== false)
+                            addToServerBtn.textContent = "Добавить в маршрут"
+
+                    if (selectedObjectId == "larri" && activationStatus["object5"]== true)
+                        addToServerBtn.textContent = "Убрать из маршрута"
+                    else
+                        if (selectedObjectId == "larri" && activationStatus["object5"]== false)
+                            addToServerBtn.textContent = "Добавить в маршрут"
+                    modal.style.display = 'block';
+                });
+            });
+
+            addToServerBtn.addEventListener('click', function() {
+                if (selectedObjectId) {
+                    // Добавление ID объекта в список для отправки на сервер Django
+                    console.log(`Add object ID ${selectedObjectId} to server list`);
+                    if (object.includes(selectedObjectId)) {
+                        object.splice(object.indexOf(selectedObjectId), 1);
+                    }
+                    else
+                        object.push(selectedObjectId)
+                    console.log(objects)
+                    //1 if
+                    if (selectedObjectId == "garmoniya" && objects.item(0).classList.contains("active")){
+                        objects.item(0).classList.remove("active")
+                        activationStatus["object1"]= false
+                        }
+                    else
+                        if (selectedObjectId == "garmoniya" && !(objects.item(0).classList.contains("active"))) {
+                            objects.item(0).classList.add("active")
+                            activationStatus["object1"]= true
+                        }
+                    //2 if
+                    if (selectedObjectId == "statui-moai" && objects.item(1).classList.contains("active"))
+                    {
+                        objects.item(1).classList.remove("active")
+                        activationStatus["object2"]= false
+                    }
+
+                    else
+                        if (selectedObjectId == "statui-moai" && !(objects.item(1).classList.contains("active")))
+                        {
+                            objects.item(1).classList.add("active")
+                            activationStatus["object2"]= true
+                        }
+
+                    if (selectedObjectId == "serdce-uralmasha" && objects.item(2).classList.contains("active"))
+                    {
+                        objects.item(2).classList.remove("active")
+                        activationStatus["object3"]= false
+                    }
+                    else
+                        if (selectedObjectId == "serdce-uralmasha" && !(objects.item(2).classList.contains("active")))
+                            {
+                                objects.item(2).classList.add("active")
+                                activationStatus["object3"]= true
+                            }
+
+                    if (selectedObjectId == "evropejskaya-norka" && objects.item(3).classList.contains("active"))
+                        {
+                        objects.item(3).classList.remove("active")
+                        activationStatus["object4"]= false
+                    }
+                    else
+                        if (selectedObjectId == "evropejskaya-norka" && !(objects.item(3).classList.contains("active")))
+                            {
+                                objects.item(3).classList.add("active")
+                                activationStatus["object4"]= true
+                            }
+
+                    if (selectedObjectId == "larri" && objects.item(4).classList.contains("active"))
+                        {
+                        objects.item(4).classList.remove("active")
+                        activationStatus["object5"]= false
+                    }
+                    else
+                        if (selectedObjectId == "larri" && !(objects.item(4).classList.contains("active")))
+                            {
+                                objects.item(4).classList.add("active")
+                                activationStatus["object5"]= true
+                            }
+
+                    console.log(`Add object ID ${object} to server list`);
+                    modal.style.display = 'none';
+                }
+            });
+
+            openPageBtn.addEventListener('click', function() {
+                if (selectedObjectId) {
+                    let url = "";
+                    // Открытие страницы, связанной с выбранным ID
+                    if (selectedObjectId == "garmoniya")
+                        url = "{% url 'rating:post' "garmoniya"%}";
+                    if (selectedObjectId == "evropejskaya-norka")
+                        url = "{% url 'rating:post' "evropejskaya-norka"%}";
+                    if (selectedObjectId == "larri")
+                        url = "{% url 'rating:post' "larri"%}";
+                    if (selectedObjectId == "serdce-uralmasha")
+                        url = "{% url 'rating:post' "serdce-uralmasha"%}";
+                    if (selectedObjectId == "statui-moai")
+                        url = "{% url 'rating:post' "statui-moai"%}";
+                    window.open(url);
+                    console.log(`Open page related to object ID ${selectedObjectId}`);
+                    modal.style.display = 'none';
+                }
+            });
+
+            window.addEventListener('click', function(event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            });
+
+
+    GIS.addEventListener('click', function() {
+
+    const csrftoken = getCookie('csrftoken');
+
+    // Отправка данных на сервер Django
+    document.getElementById('GIS').addEventListener('click', function() {
+
+    const csrftoken = getCookie('csrftoken');
+
+    // Отправка данных на сервер Django
+    $.ajax({
+        url: 'POST/', // Здесь укажите путь к вашему Django view
+        type: 'POST',
+        contentType: 'application/json',
+        headers: { 'X-CSRFToken': csrftoken },
+        data: JSON.stringify( object ),
+        success: function(response) {
+            // После успешного ответа от сервера открываем ссылку
+            window.open(response.url, '_blank');
+        }
+    });
+});
+
+
+
+// Функция для получения CSRF-токена из куки
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }})
+
+      </script>
+      <script>
           const places = document.querySelectorAll('.place');
 
           places.forEach(place => {
               place.addEventListener('click', function() {
                   const placeId = this.getAttribute('data-id');
-                  sessionStorage.setItem('selectedPlaceId', placeId); // Сохраняем ID выбранного места
-                  window.open('art.html', '_blank'); // Открываем информацию об объекте в новой вкладке
+                  sessionStorage.setItem('selectedPlaceId', placeId); // Сохраняем ID выбранного места// Открываем информацию об объекте в новой вкладке
               });
           });
         function sortElements() {
@@ -176,6 +386,7 @@
         }
 
       </script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 </html>
 
