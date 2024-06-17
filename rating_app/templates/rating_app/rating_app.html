@@ -41,7 +41,7 @@
       class="frame-73"
       src={{ object.image.url }}
       />
-      <div id="place-info" style=" box-shadow: 0 0 11px rgba(115, 55, 55, 0.89); margin-top: 30px; background-color: rgba(197, 104, 104, 0.5);border: 1px solid #ccc;border-radius: 8px; padding: 10px;margin-bottom: 10px;word-wrap: break-word;overflow-wrap: break-word; width: 680px;">
+      <div id="place-info" style=" box-shadow: 0 0 11px rgba(115, 55, 55, 0.89); margin-top: 45px; background-color: rgba(197, 104, 104, 0.5);border: 1px solid #ccc;border-radius: 8px; padding: 10px;margin-bottom: 10px;word-wrap: break-word;overflow-wrap: break-word; width: 680px;">
         <h1 id="place-name" style="  font-weight: 600; color: rgba(115, 55, 55, 1);margin-bottom: 20px;letter-spacing: 0.72px;">{{ object.name }}</h1>
         <div style="display: flex; flex-direction: row;">
           <p class="avtor-imja-familija">Автор:&nbsp;{{ object.author }}</p>
@@ -56,7 +56,7 @@
           <p class="avtor-imja-familija-emphasis-0">{{ object.info }}</p>
         <div style="display: flex; flex-direction: row;">
           <p class="avtor-imja-familija">Рейтинг:&nbsp;</p>
-            <div class="col text-center" style="margin-right: 245px">
+            <div class="col text-center govno" style="margin-right: 428px">
                 <button type="submit" class="fa fa-star fa-3x my-btn starStyle active" ></button>
                 <button type="submit" class="fa fa-star fa-3x my-btn starStyle active" id="second"></button>
                 <button type="submit" class="fa fa-star fa-3x my-btn starStyle active" id="third"></button>
@@ -71,18 +71,18 @@
     <!-- Форма для комментариев -->
     <div class="addCommenter">
         {% if user.is_authenticated %}
-      <h2>Добавить отзыв</h2>
+      <h2 style="font-weight: 600">Добавить отзыв</h2>
       <form class="form-1" action="" method="POST" id="{{object.id}}" >
             {% csrf_token %}
           {{comment_form}}
-          <div class="col text-center">
+          <div class="col text-center govno-2">
                 <button type="submit" class="fa fa-star fa-3x my-btn starStyle" id="first"></button>
                 <button type="submit" class="fa fa-star fa-3x my-btn starStyle" id="second"></button>
                 <button type="submit" class="fa fa-star fa-3x my-btn starStyle" id="third"></button>
                 <button type="submit" class="fa fa-star fa-3x my-btn starStyle" id="fourth"></button>
                 <button type="submit" class="fa fa-star fa-3x my-btn starStyle" id="fifth"></button>
             </div>
-          <div>
+          <div style = "text-align: center; margin-top: 30px; margin-left:-10px; margin-bottom: 100px;">
               <button class="addCommentButton" >Оставить отзыв</button>
           </div>
       </form>
@@ -90,7 +90,14 @@
             <p>Авторизуйтесь, чтобы получить возможность оставить свой отзыв об Арт-объекте! </p>
         {% endif %}
     </div>
-    {% for comment in comments %}
+    <!-- Секция для отображения комментариев -->
+    <div class="comments-1" id="commentsSection">
+      <h2 style="color: rgba(41, 108, 99, 1); margin-right: 10px; margin-bottom: 50px; font-weight: 800;">Отзывы</h2>
+      <div id="commentsList">
+      {% if comments.first == none %}
+          <p class="net-otzyv">Пока никто не оставил отзыв, но вы можете стать первым!</p>
+      {% else %}
+        {% for comment in comments %}
       <blockquote class="comment-container">
         <p>{{ comment.author}}, {{ comment.caption}}, {{ comment.date_posted}}, {{ comment.rate }}</p>
         <footer class="blockquote-footer">
@@ -108,13 +115,9 @@
         </footer>
       </blockquote>
     {% endfor %}
-    <!-- Секция для отображения комментариев -->
-    <div id="commentsSection">
-      <h2 style="color: rgba(41, 108, 99, 1); margin-right: 10px;">Отзывы</h2>
-      <div id="commentsList">
-        <!-- Здесь будут отображаться комментарии -->
       </div>
     </div>
+    {% endif %}
 
     <div class="frame-3">
       <img

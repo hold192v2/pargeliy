@@ -6,7 +6,7 @@ class CommentForm(forms.ModelForm):
     content = forms.CharField(label="", widget=forms.Textarea(
         attrs={
             'class': 'my-form',
-            'placeholder': 'Напишите о своём отношении к Арт-объекту!',
+            'placeholder': 'Поделитесь мнением об этом Арт-объекте!',
             'rows': 5,
             'cols': 50
         }))

@@ -1,3 +1,7 @@
+body{
+  font-family: "Raleway", sans-serif;
+}
+
 .body{
   margin: 0;
   overflow-x: hidden;
@@ -18,8 +22,6 @@
   padding: 0 310px;
   display: flex;
   align-items: center;
-  height: 100px;
-  width: 1270px;
 }
 .frame-7 {
   margin-right: 310px;
@@ -83,19 +85,21 @@
   text-align: center;
 }
 .frame-86 {
-  margin-bottom: 25px;
+  margin-bottom: 50px;
   padding: 0 146px 80px 135px;
   display: flex;
   align-items: flex-start;
-  height: 640px;
-  width: 1639px;
+
 }
 .frame-73 {
-  width: 720px;
-  height: 640px;
+  margin-top: 25px;
+  width: 620px;
+  height: 520px;
   background-size: 100% 100%;
+  margin-right: 100px;
   background-position: center;
-  margin-right: 269px;
+  border-radius: 70px;
+  box-shadow: 0 0 17px #296C63;
 }
 .frame-74 {
   background-color: rgba(151, 73, 73, 0.5);
@@ -144,7 +148,7 @@
   margin-bottom: 10px;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  width: 1820px;
+
 }
 .ellipse-3 {
   width: 50px;
@@ -179,12 +183,11 @@
     rgba(139, 213, 203, 1) 0%,
     rgba(237, 255, 250, 1) 100%
   );
-  padding: 20px 600px;
+  padding: 20px 342px;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60px;
-  width: 720px;
+
 }
 .comment-container {
   background-color: #f9f9f9;
@@ -210,9 +213,12 @@
   color: rgba(41, 108, 99, 1);
 }
 .addCommentButton {
-  color: rgba(41, 108, 99, 1);
-  background: transparent;
+  color: white;
+  background: #296C63;
+  padding: 10px;
+  border-radius: 25px;
   border: none !important;
+  text-align: center;
 }
 .compass-two {
   width: 75px;
@@ -222,7 +228,7 @@
 .vk{
   height: 70px;
   width: 70px;
-  background-image: url("../media/vk (2).svg");
+  background-image: url("../media/vk.svg");
   border: none !important;
   border-radius: 20px;
 }
@@ -238,4 +244,45 @@
   display: flex;
   flex-direction: row;
   margin-right: 10px;
+}
+.starStyle{
+  border: none;
+  background-color: transparent;
+  font-size: 23px;
+  width: 23px;
+}
+.avtor-imja-familija-1{
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: -20px;
+}
+.active{
+  color: yellow;
+}
+.my-form
+{
+  width: 700px;
+  border-radius: 13px;
+  padding: 15px;
+  border: 3px solid black;
+  background-color: rgba(197, 104, 104, 0.5);
+  resize: vertical;
+  min-height: 50px;
+}
+.govno-2{
+  margin-top: 15px;
+  margin-left: -10px;
+}
+.comment-container{
+  width: 1000px;
+
+}
+.comments-1{
+  text-align: center;
+}
+.net-otzyv{
+  font-weight: 500;
+  color: rgba(41, 108, 99, 1);
+  font-size: 16px;
 }
