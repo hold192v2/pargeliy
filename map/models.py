@@ -26,6 +26,7 @@ class Cardss(models.Model):
     slug = models.SlugField(unique=True, max_length=200, blank=True, null=True, verbose_name='URL')
     image = models.ImageField(upload_to='static/deps/media', blank=True, null=True, verbose_name='Изображение')
     rate = models.DecimalField(default=0, validators=[MinValueValidator(0.0), MaxValueValidator(5.0)], max_digits=2, decimal_places=1, blank= True, null=True, verbose_name='Оценка')
+    usersCount = models.IntegerField(default=0, blank=True, null=True, verbose_name="Количество пользователей")
     author = models.CharField(max_length=150, blank=True, null=True, verbose_name='Автор')
     adress = models.CharField(max_length=150, blank=True, null=True, verbose_name='Адрес')
     coordinates = models.CharField(max_length=15000, blank=True, null=True, verbose_name='Координаты 2GIS')

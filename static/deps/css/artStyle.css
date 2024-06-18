@@ -19,7 +19,7 @@ body{
     rgba(237, 255, 250, 1) 100%
   );
   margin-bottom: 25px;
-  padding: 0 310px;
+  padding: 0 200px;
   display: flex;
   align-items: center;
 }
@@ -27,7 +27,6 @@ body{
   margin-right: 310px;
   display: flex;
   align-items: center;
-  width: 521px;
 }
 .compass {
   width: 75px;
