@@ -3,7 +3,7 @@ from .models import Comment
 
 
 class CommentForm(forms.ModelForm):
-    content = forms.CharField(label="", widget=forms.Textarea(
+    review = forms.CharField(label="", widget=forms.Textarea(
         attrs={
             'class': 'my-form',
             'placeholder': 'Поделитесь мнением об этом Арт-объекте!',
@@ -13,4 +13,4 @@ class CommentForm(forms.ModelForm):
 
     class Meta:
         model = Comment
-        fields = ['content']
+        fields = ['review']

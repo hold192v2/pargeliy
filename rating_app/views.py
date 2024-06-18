@@ -12,17 +12,21 @@ from .models import Comment
 def post_detailview(request, slug, *args, **kwargs):
     user = request.user
     post = Cardss.objects.get(slug=slug)
-    cf = CommentForm(data=request.POST or None)
+    rate = 0
     comments = Comment.objects.filter(card=post).order_by("-date_posted")
-    if cf.is_valid():
-        content = request.POST.get('content')
-        comment = Comment.objects.create(card=post, author=user, caption=content)
-        # Дополнительная логика по обновлению данных, если необходимо
+    if request.method == "POST":
+        govno = json.loads(request.body)
+        rate = govno[0]
+        content = govno[1]
+        user_count = govno[2]
+        comment = Comment.objects.create(card=post, author=user, caption=content, rate= rate)
+        post.rate = (post.rate * user_count + rate)/(user_count + 1)
+        post.save()
     context = {
         'title': 'Оставить отзыв',
         'comments': comments,
         'object': post,
-        'comment_form': cf,
+        "rates": rate,
     }
 
     return render(request, 'rating_app/rating_app.html', context=context)

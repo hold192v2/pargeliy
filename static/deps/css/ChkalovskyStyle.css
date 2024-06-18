@@ -493,6 +493,14 @@ body{
     top: 580px;
     width: 50px;
     height: 75px;
+    cursor: pointer;
+    opacity : 90%
+  }
+  .faviconTime41:hover{
+    opacity: 85%;
+  }
+  .faviconTime41:active{
+    opacity: 78%;
   }
   .faviconTime42{
     position: relative;
