@@ -34,7 +34,7 @@
             {% if not user.is_authenticated %}
             <button onclick="window.open(`{% url "user:login" %}`)" class="frame-11"><p class="vhod">Вход</p></button>
               {% else %}
-              <p class="vhod ">{{ user }}</p>
+              <div class="frame-11"><p class="vhod">{{ user }}</p></div>
             {% endif %}
           </div>
         </div>
@@ -299,7 +299,7 @@
                 }
             });
 
-            window.addEventListener('Sclick', function(event) {
+            window.addEventListener('click', function(event) {
                 if (event.target == modal) {
                     modal.style.display = 'none';
                 }

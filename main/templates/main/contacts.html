@@ -23,18 +23,18 @@
                 src="https://static.overlay-tech.com/assets/6a2b1154-5ade-42dd-a20a-10e0e46a9fc9.svg"
               />
               <div class="frame-10">
-                <button onclick="window.open(`{% url "main:index" %}`)" class="kontakty">Главная</button>
+                <button onclick="window.open(`{% url "main:index" %}`)" class="kontakty kontakty1">Главная</button>
               </div>
               <div class="frame-10">
-                <button onclick="window.open(`{% url "map:map" %}`)" class="kontakty">Карта</button>
+                <button onclick="window.open(`{% url "map:map" %}`)" class="kontakty kontakty1">Карта</button>
               </div>
               <div class="frame-10">
-                <button onclick="window.open(`{% url "main:about" %}`)" class="kontakty">О&nbsp;нас</button>
+                <button onclick="window.open(`{% url "main:about" %}`)" class="kontakty kontakty1">О&nbsp;нас</button>
               </div>
               {% if not user.is_authenticated %}
             <button onclick="window.open(`{% url "user:login" %}`)" class="frame-11"><p class="vhod">Вход</p></button>
               {% else %}
-              <p class="vhod frame-11">{{ user }}</p>
+              <div class="frame-11"><p class="vhod">{{ user }}</p></div>
             {% endif %}
             </div>
           </div>
@@ -46,7 +46,7 @@
             />
             <p class="esli-u-vas-est-art-ob-ekty-kotorymi-vy">
             Если у Вас есть арт-объекты, которыми Вы хотите
-                поделиться, то жмите<br> кнопку либо пишите на почту artekat196&#64;gmail.com
+                поделиться, то жмите<br> кнопку либо пишите на почту artekat196&#64;gmail.com.
             </p>
             <form action="https://forms.gle/eeGPEFqWhwPn1F3BA" target="_blank">
                 <button class="frame-92"><p class="klik">Клик</p></button>

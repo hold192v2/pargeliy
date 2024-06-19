@@ -31,7 +31,7 @@
             <div class="frame-10">
               <button onclick="window.open(`{% url "main:about" %}`)" class="kontakty">О&nbsp;нас</button>
             </div>
-              {% if not user.is_authenticated %}
+              {% if  user.is_authenticated %}
             <button onclick="window.open(`{% url "user:login" %}`)" class="frame-11"><p class="vhod">Вход</p></button>
               {% else %}
               <div class="frame-11"><p class="vhod ">{{ user }}</p></div>

@@ -55,6 +55,7 @@ body {
     background: transparent;
     border: none !important;
     text-shadow: 0 0 18px #348074;
+    cursor: pointer;
 
   }
   .kontakty:hover {
@@ -85,7 +86,6 @@ body {
     align-items: center;
     justify-content: space-between;
     width: 59px;
-    margin-left: 700px;
     background: transparent;
     border: none !important;
   }
@@ -97,6 +97,7 @@ body {
     text-align: center;
     margin-left: 552px;
     text-shadow: 0 0 18px #348074;
+    cursor: pointer;
   }
   .flex-wrapper-one {
     margin-bottom: 279px;
@@ -155,8 +156,8 @@ body {
   .compass-two {
     width: 75px;
     height: 75px;
-    margin-left: -200px;
-    margin-right: 600px;
+    margin-left: -169px;
+    margin-right: 459px;
   }
   .frame-80 {
     background-color: rgb(237,255,250);
@@ -336,6 +337,7 @@ body {
     background-color: rgb(148, 72, 72);
   }
   .knopkaMarsrut {
+    cursor: pointer;
     position: relative;
     font-weight: 500;
     font-style: normal;
@@ -374,6 +376,7 @@ body {
     background-color: rgb(197, 104, 104);
     background: transparent;
     border: none !important;
+    cursor: pointer;
   }
    .knopkaSort:hover {
      border-radius: 10px;
@@ -400,17 +403,31 @@ body {
     background-image: url("../media/vk.svg");
     border: none !important;
     border-radius: 20px;
-    box-shadow: 0 0 15px #348074;
+    box-shadow: 0 0 10px #348074;
+    cursor: pointer;
+  }
+  .vk:hover {
+    opacity: 90%;
+  }
+  .vk:active {
+    opacity: 80%;
   }
   .mail{
+    cursor: pointer;
     height: 70px;
     width: 70px;
     margin-right: 10px;
     background-image: url("../media/mail.svg");
-    box-shadow: 0 0 15px #348074;
+    box-shadow: 0 0 10px #348074;
 
     border: none !important;
     border-radius: 20px;
+  }
+  .mail:hover {
+    opacity: 90%;
+  }
+  .mail:active {
+    opacity: 80%;
   }
   .groupFav{
     height: 75px;
@@ -432,6 +449,15 @@ body {
     transition: border-color 0.3s;
     border-radius: 30px;
     animation: glow-shadow 6s infinite;
+    cursor: pointer;
+  }
+  .sortPodtver:hover {
+     border-radius: 30px;
+    background-color: rgb(171, 83, 83);
+  }
+  .sortPodtver:active {
+    border-radius: 30px;
+    background-color: rgb(148, 72, 72);
   }
 
   @keyframes glow-shadow {
@@ -457,6 +483,14 @@ body {
     top: 830px;
     width: 50px;
     height: 75px;
+    opacity: 95%;
+    cursor: pointer;
+  }
+  .faviconTime11:hover{
+    opacity: 90%;
+  }
+  .faviconTime11:active{
+    opacity: 85%;
   }
   .faviconTime12{
     position: relative;
@@ -464,6 +498,14 @@ body {
     top: 1000px;
     width: 50px;
     height: 75px;
+    opacity: 95%;
+    cursor: pointer;
+  }
+  .faviconTime12:hover{
+    opacity: 90%;
+  }
+  .faviconTime12:active{
+    opacity: 85%;
   }
   .faviconTime21{
     position: relative;
@@ -471,6 +513,14 @@ body {
     top: 1000px;
     width: 50px;
     height: 75px;
+    opacity: 95%;
+    cursor: pointer;
+  }
+  .faviconTime21:hover{
+    opacity: 90%;
+  }
+  .faviconTime21:active{
+    opacity: 85%;
   }
   .faviconTime22{
     position: relative;
@@ -478,6 +528,14 @@ body {
     top: 850px;
     width: 50px;
     height: 75px;
+    opacity: 95%;
+    cursor: pointer;
+  }
+  .faviconTime22:hover{
+    opacity: 90%;
+  }
+  .faviconTime22:active{
+    opacity: 85%;
   }
   .faviconTime23{
     position: relative;
@@ -485,6 +543,14 @@ body {
     top: 670px;
     width: 50px;
     height: 75px;
+    opacity: 95%;
+    cursor: pointer;
+  }
+  .faviconTime23:hover{
+    opacity: 90%;
+  }
+  .faviconTime23:active{
+    opacity: 85%;
   }
   .faviconTime24{
     position: relative;
@@ -492,6 +558,14 @@ body {
     top: 700px;
     width: 50px;
     height: 75px;
+    opacity: 95%;
+    cursor: pointer;
+  }
+  .faviconTime24:hover{
+    opacity: 90%;
+  }
+  .faviconTime24:active{
+    opacity: 85%;
   }
   .faviconTime3{
     position: relative;
@@ -499,6 +573,14 @@ body {
     top: 300px;
     width: 50px;
     height: 75px;
+    opacity: 95%;
+    cursor: pointer;
+  }
+  .faviconTime3:hover{
+    opacity: 90%;
+  }
+  .faviconTime3:active{
+    opacity: 85%;
   }
   .faviconTime41{
     position: relative;
@@ -506,6 +588,14 @@ body {
     top: 600px;
     width: 50px;
     height: 75px;
+    opacity: 95%;
+    cursor: pointer;
+  }
+  .faviconTime41:hover{
+    opacity: 90%;
+  }
+  .faviconTime41:active{
+    opacity: 85%;
   }
   .faviconTime42{
     position: relative;
@@ -513,6 +603,14 @@ body {
     top: 620px;
     width: 50px;
     height: 75px;
+    opacity: 95%;
+    cursor: pointer;
+  }
+  .faviconTime42:hover{
+    opacity: 90%;
+  }
+  .faviconTime42:active{
+    opacity: 85%;
   }
   .faviconTime43{
     position: relative;
@@ -520,6 +618,14 @@ body {
     top: 550px;
     width: 50px;
     height: 75px;
+    opacity: 95%;
+    cursor: pointer;
+  }
+  .faviconTime43:hover{
+    opacity: 90%;
+  }
+  .faviconTime43:active{
+    opacity: 85%;
   }
     .modal {
     display: none;
@@ -572,9 +678,17 @@ body {
   border-radius: 15px;
   margin-top: 5px;
   box-shadow: 0 0 9px #348074;
+  cursor: pointer;
+}
+.page-21:hover{
+  background-color: rgb(46, 114, 103);
+}
+.page-21:active{
+  background-color: rgb(41, 101, 92);
 }
 
 .idServer{
+  cursor: pointer;
   color: white;
   text-align: center;
   width: 180px;
@@ -587,6 +701,18 @@ body {
   border-radius: 15px;
   margin-top: 5px;
   box-shadow: 0 0 9px #348074;
+}
+
+.idServer:hover{
+  background-color: rgb(46, 114, 103);
+}
+.idServer:active{
+  background-color: rgb(41, 101, 92);
+}
+.disabled {
+  opacity: 50%;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 

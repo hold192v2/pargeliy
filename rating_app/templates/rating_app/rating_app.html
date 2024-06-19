@@ -135,32 +135,32 @@
         <div class="border-1"></div>
         <p class="caption">{{ comment.caption}}</p>
           <div class="govno-1" style="margin-right: 428px">
-                {% if object.rate == 1.0 %}
+                {% if comment.rate == 1 %}
                     <span class="fa fa-star fa-3x my-btn starStyle active" ></span>
                     <span class="fa fa-star fa-3x my-btn starStyle" ></span>
                     <span class="fa fa-star fa-3x my-btn starStyle" ></span>
                     <span class="fa fa-star fa-3x my-btn starStyle" ></span>
                     <span class="fa fa-star fa-3x my-btn starStyle" ></span>
-                {% elif  object.rate == 2.0 %}
+                {% elif  comment.rate == 2 %}
 
                     <span class="fa fa-star fa-3x my-btn starStyle active" ></span>
                     <span class="fa fa-star fa-3x my-btn starStyle active" ></span>
                     <span class="fa fa-star fa-3x my-btn starStyle" ></span>
                     <span class="fa fa-star fa-3x my-btn starStyle" ></span>
                     <span class="fa fa-star fa-3x my-btn starStyle" ></span>
-                {% elif object.rate <= 3.0 %}
+                {% elif comment.rate == 3 %}
                     <span class="fa fa-star fa-3x my-btn starStyle active" ></span>
                     <span class="fa fa-star fa-3x my-btn starStyle active" ></span>
                     <span class="fa fa-star fa-3x my-btn starStyle active" ></span>
                     <span class="fa fa-star fa-3x my-btn starStyle" ></span>
                     <span class="fa fa-star fa-3x my-btn starStyle" ></span>
-                {% elif object.rate <= 4.0 %}
+                {% elif comment.rate == 4 %}
                     <span class="fa fa-star fa-3x my-btn starStyle active" ></span>
                     <span class="fa fa-star fa-3x my-btn starStyle active" ></span>
                     <span class="fa fa-star fa-3x my-btn starStyle active" ></span>
                     <span class="fa fa-star fa-3x my-btn starStyle active" ></span>
                     <span class="fa fa-star fa-3x my-btn starStyle" ></span>
-                {% elif  object.rate <= 5.0 %}
+                {% elif  comment.rate == 5 %}
                     <span class="fa fa-star fa-3x my-btn starStyle active" ></span>
                     <span class="fa fa-star fa-3x my-btn starStyle active" ></span>
                     <span class="fa fa-star fa-3x my-btn starStyle active" ></span>

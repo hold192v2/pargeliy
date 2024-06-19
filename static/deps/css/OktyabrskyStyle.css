@@ -55,7 +55,7 @@ body{
     background: transparent;
     border: none !important;
     text-shadow: 0 0 18px #348074;
-
+    cursor: pointer;
   }
      .vhod:hover {
     color: rgb(24, 162, 154);
@@ -97,6 +97,7 @@ body{
     text-align: center;
     margin-left: -150px;
     text-shadow: 0 0 18px #348074;
+    cursor: pointer;
   }
   .flex-wrapper-one {
     margin-bottom: 279px;
@@ -156,8 +157,8 @@ body{
   .compass-two {
     width: 75px;
     height: 75px;
-    margin-left: -200px;
-    margin-right: 600px;
+    margin-left: -169px;
+    margin-right: 459px;
   }
   .frame-80 {
     background-color: rgb(237,255,250);
@@ -352,6 +353,7 @@ body{
     left: 650px;
     border-radius: 30px;
     box-shadow: 0 0 15px #348074;
+    cursor: pointer;
   }
   .knopkaMarsrut:hover {
     background-color: rgb(171, 83, 83);
@@ -374,6 +376,7 @@ body{
     background-color: rgb(197, 104, 104);
     background: transparent;
     border: none !important;
+      cursor: pointer;
   }
    .knopkaSort:hover {
      border-radius: 10px;
@@ -400,7 +403,14 @@ body{
     background-image: url("../media/vk.svg");
     border: none !important;
     border-radius: 20px;
-    box-shadow: 0 0 15px #348074;
+    box-shadow: 0 0 10px #348074;
+    cursor: pointer;
+  }
+  .vk:hover {
+    opacity: 90%;
+  }
+  .vk:active {
+    opacity: 80%;
   }
   .mail{
     height: 70px;
@@ -409,7 +419,14 @@ body{
     background-image: url("../media/mail.svg");
     border: none !important;
     border-radius: 20px;
-    box-shadow: 0 0 15px #348074;
+    box-shadow: 0 0 10px #348074;
+    cursor: pointer;
+  }
+  .mail:hover {
+    opacity: 90%;
+  }
+  .mail:active {
+    opacity: 80%;
   }
   .groupFav{
     height: 75px;
@@ -431,6 +448,15 @@ body{
     transition: border-color 0.3s;
     border-radius: 30px;
     animation: glow-shadow 6s infinite;
+    cursor: pointer;
+  }
+  .sortPodtver:hover {
+     border-radius: 30px;
+    background-color: rgb(171, 83, 83);
+  }
+  .sortPodtver:active {
+    border-radius: 30px;
+    background-color: rgb(148, 72, 72);
   }
 
   @keyframes glow-shadow {
@@ -456,6 +482,14 @@ body{
     top: 910px;
     width: 50px;
     height: 75px;
+    opacity: 95%;
+    cursor: pointer;
+  }
+  .faviconTime11:hover{
+    opacity: 90%;
+  }
+  .faviconTime11:active{
+    opacity: 85%;
   }
   .faviconTime12{
     position: relative;
@@ -463,6 +497,14 @@ body{
     top: 750px;
     width: 50px;
     height: 75px;
+    opacity: 95%;
+    cursor: pointer;
+  }
+  .faviconTime12:hover{
+    opacity: 90%;
+  }
+  .faviconTime12:active{
+    opacity: 85%;
   }
   .faviconTime21{
     position: relative;
@@ -470,6 +512,14 @@ body{
     top: 520px;
     width: 50px;
     height: 75px;
+    opacity: 95%;
+    cursor: pointer;
+  }
+  .faviconTime21:hover{
+    opacity: 90%;
+  }
+  .faviconTime21:active{
+    opacity: 85%;
   }
   .faviconTime22{
     position: relative;
@@ -477,6 +527,14 @@ body{
     top: 760px;
     width: 50px;
     height: 75px;
+    opacity: 95%;
+    cursor: pointer;
+  }
+  .faviconTime22:hover{
+    opacity: 90%;
+  }
+  .faviconTime22:active{
+    opacity: 85%;
   }
   .faviconTime3{
     position: relative;
@@ -484,6 +542,14 @@ body{
     top: 300px;
     width: 50px;
     height: 75px;
+    opacity: 95%;
+    cursor: pointer;
+  }
+  .faviconTime3:hover{
+    opacity: 90%;
+  }
+  .faviconTime3:active{
+    opacity: 85%;
   }
   .faviconTime41{
     position: relative;
@@ -491,6 +557,14 @@ body{
     top: 290px;
     width: 50px;
     height: 75px;
+    opacity: 95%;
+    cursor: pointer;
+  }
+  .faviconTime41:hover{
+    opacity: 90%;
+  }
+  .faviconTime41:active{
+    opacity: 85%;
   }
   .faviconTime42{
     position: relative;
@@ -498,6 +572,14 @@ body{
     top: 250px;
     width: 50px;
     height: 75px;
+    opacity: 95%;
+    cursor: pointer;
+  }
+  .faviconTime42:hover{
+    opacity: 90%;
+  }
+  .faviconTime42:active{
+    opacity: 85%;
   }
     .modal {
     display: none;
@@ -538,34 +620,48 @@ body{
       }
   }
   .page-21{
-    color: white;
-    font-family: "Raleway", sans-serif;
-    width: 180px;
-    text-align: center;
-    font-weight: 500;
-    border: none;
-    background-color: rgba(52, 128, 116);
-    padding: 10px;
-    margin-left: 15px;
-    border-radius: 15px;
-    margin-top: 5px;
-    box-shadow: 0 0 9px #348074;
-  }
+  color: white;
+  font-family: "Raleway", sans-serif;
+  width: 180px;
+  text-align: center;
+  font-weight: 500;
+  border: none;
+  background-color: rgba(52, 128, 116);
+  padding: 10px;
+  margin-left: 15px;
+  border-radius: 15px;
+  margin-top: 5px;
+  box-shadow: 0 0 9px #348074;
+  cursor: pointer;
+}
+.page-21:hover{
+  background-color: rgb(46, 114, 103);
+}
+.page-21:active{
+  background-color: rgb(41, 101, 92);
+}
 
   .idServer{
-    color: white;
-    text-align: center;
-    width: 180px;
-    font-family: "Raleway", sans-serif;
-    border: none;
-    font-weight: 500;
-    background-color: rgba(52, 128, 116);
-    padding: 10px;
-    margin-left: 70px;
-    border-radius: 15px;
-    margin-top: 5px;
-    box-shadow: 0 0 9px #348074;
-  }
+  color: white;
+  text-align: center;
+  width: 180px;
+  font-family: "Raleway", sans-serif;
+  border: none;
+  font-weight: 500;
+  background-color: rgba(52, 128, 116);
+  padding: 10px;
+  margin-left: 70px;
+  border-radius: 15px;
+  margin-top: 5px;
+  box-shadow: 0 0 9px #348074;
+  cursor: pointer;
+}
+.idServer:hover{
+  background-color: rgb(46, 114, 103);
+}
+.idServer:active{
+  background-color: rgb(41, 101, 92);
+}
 
 
 

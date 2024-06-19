@@ -60,14 +60,17 @@ body{
     background-color: rgb(139,213,203);
     color: white;
     letter-spacing: 1.2px;
-    font-family: var(--raleway-24-semi-bold-family);
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
-    line-height: var(--raleway-24-semi-bold-line-height);
-    border: 0;
-    padding: 15px;
-    margin-bottom: 25px;
-    width: 600px;
+
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-left: 66px;
+    border: 2px solid black;
+
+    width: 450px;
+    border-radius: 20px;
+
   }
   .frame-16 {
     background-color: rgb(139,213,203);
@@ -91,27 +94,28 @@ body{
     flex-direction: row;
   }
   .uzhe-est-akkaunt {
-    margin-left: 10px;
-    margin-top: 15px;
     color: rgb(41,108,99);
+    margin-top: 15px;
+    margin-right: 3px;
+    margin-left: 45px;
     letter-spacing: 1.2px;
-    font-size: 24px;
+    font-family: var(--raleway-24-semi-bold-family);
+    font-size: 18px;
     font-weight: var(--raleway-24-semi-bold-weight);
     line-height: var(--raleway-24-semi-bold-line-height);
     
   }
 
   .vojti {
-    margin-top: -6px;
     color: rgb(151,73,73);
     text-decoration: underline;
     letter-spacing: 1.2px;
-    font-family: var(--raleway-24-semi-bold-family);
-    font-size: 24px;
-    font-weight: var(--raleway-24-semi-bold-weight);
-    line-height: var(--raleway-24-semi-bold-line-height);
+    font-size: 18px;
+
     background: transparent;
+
     border: none !important;
+    cursor:pointer;
   }
   .vojti:hover {
     color: rgb(231, 115, 115);
@@ -132,7 +136,8 @@ body{
   .compass {
     width: 75px;
     height: 75px;
-    margin-right: 600px;
+    margin-left: -169px;
+    margin-right: 460px;
   }
   .mainAndVk{
     display: flex;
@@ -152,14 +157,16 @@ body{
     color: rgb(255, 255, 255);
     background-color: rgb(139,213,203);
     letter-spacing: 1.2px;
-
+    align-self: center;
+    margin-left: 45px;
     font-family: var(--raleway-24-semi-bold-family);
-    font-size: 22px;
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 500;
     line-height: var(--raleway-24-semi-bold-line-height);
-    padding:  10px 50px 10px 50px;
-    margin-left: 150px;
-    border: 0px;
+    padding:  10px 10px 10px 10px;
+    border: 0;
+    border-radius: 20px;
+    cursor: pointer;
   }
   .inputButton:hover {
       background-color: rgb(130, 201, 192);
@@ -173,6 +180,14 @@ body{
     background-image: url("../media/vk.svg");
     border: none !important;
     border-radius: 20px;
+    box-shadow: 0 0 10px #296C63;
+      cursor: pointer;
+  }
+  .vk:hover {
+    opacity: 90%;
+  }
+  .vk:active {
+    opacity: 80%;
   }
   .mail{
     height: 70px;
@@ -181,6 +196,14 @@ body{
     background-image: url("../media/mail.svg");
     border: none !important;
     border-radius: 20px;
+    box-shadow: 0 0 10px #296C63;
+    cursor: pointer;
+  }
+  .mail:hover {
+    opacity: 90%;
+  }
+  .mail:active {
+    opacity: 80%;
   }
   .mainAndVk{
     display: flex;
