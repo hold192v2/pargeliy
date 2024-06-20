@@ -13,16 +13,17 @@ body{
   align-items: center;
 }
 .frame-2 {
-  background: linear-gradient(
-    180deg,
-    rgba(139, 213, 203, 1) 0%,
-    rgba(237, 255, 250, 1) 100%
-  );
-  margin-bottom: 25px;
-  padding: 0 214px;
-  display: flex;
-  align-items: center;
-}
+    background: linear-gradient(
+      180deg,
+      rgb(141,214,204) 0%,
+      rgb(237,255,250) 100%
+    );
+    padding: 12.5px 310px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
 .frame-7 {
   margin-right: 310px;
   display: flex;
@@ -39,23 +40,36 @@ body{
   align-items: center;
   justify-content: center;
   background: transparent;
-  border: none !important;
+  border: none ;
+}
+.frame-10:active{
+  border: none ;
 }
 .frame-10:not(:last-of-type) {
   margin-right: 20px;
-}
-.kontakty {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: normal;
-  color: rgb(41,108,99);
-  letter-spacing: 0.72px;
-  background: transparent;
   border: none !important;
 }
+.frame-10:focus {
+  outline: none; /* Убираем рамку при фокусе */
+}
+.kontakty {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: normal;
+    color: rgb(41,108,99);
+    letter-spacing: 0.72px;
+    background: transparent;
+    border: none !important;
+    text-shadow: 0 0 18px #348074;
+    cursor: pointer;
+
+  }
+  .kontakty:hover {
+    color: rgb(24, 162, 154);
+  }
+  .kontakty:active {
+    color: rgb(33, 133, 114);
+  }
 .o-nas {
   color: rgba(41, 108, 99, 1);
   letter-spacing: 0.72px;
@@ -66,17 +80,33 @@ body{
   align-items: center;
   justify-content: space-between;
   width: 59px;
-  margin-left: 260px;
+  margin-left: 245px;
   background: transparent;
   border: none !important;
 }
 .vhod {
+  border: none;
   font-family: "Raleway";
   font-size: 24px;
   font-weight: 700;
   line-height: 55px;
   color: rgb(41,108,99);
+  margin-top: 25px;
   text-align: center;
+  text-shadow: 0 0 18px #348074;
+  cursor: pointer;
+}
+.frame-11:active {
+  border: none; /* Убираем рамку при нажатии */
+}
+
+
+.vhod:hover {
+    color: rgb(24, 162, 154);
+  }
+.vhod:active {
+  border: none;
+  color: rgb(33, 133, 114);
 }
 .frame-86 {
   margin-bottom: 50px;
@@ -177,7 +207,7 @@ body{
     rgba(139, 213, 203, 1) 0%,
     rgba(237, 255, 250, 1) 100%
   );
-  padding: 20px 342px;
+  padding: 12.5px 380px 12.5px 380px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -208,6 +238,7 @@ body{
 }
 .addCommentButton {
   color: white;
+  margin-right: 10px;
   background-color: #296C63;
   padding: 10px;
   border-radius: 25px;
@@ -217,23 +248,41 @@ body{
 .compass-two {
   width: 75px;
   height: 75px;
-  margin-right: 600px;
+  margin-right: 527px;
+
 }
 .vk{
-  height: 70px;
-  width: 70px;
-  background-image: url("../media/vk.svg");
-  border: none !important;
-  border-radius: 20px;
-}
+    height: 70px;
+    width: 70px;
+    background-image: url("../media/vk.svg");
+    border: none !important;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #348074;
+    cursor: pointer;
+  }
+  .vk:hover {
+    opacity: 90%;
+  }
+  .vk:active {
+    opacity: 80%;
+  }
 .mail{
-  height: 70px;
-  width: 70px;
-  margin-right: 10px;
-  background-image: url("../media/mail.svg");
-  border: none !important;
-  border-radius: 20px;
-}
+    cursor: pointer;
+    height: 70px;
+    width: 70px;
+    margin-right: 10px;
+    background-image: url("../media/mail.svg");
+    box-shadow: 0 0 10px #348074;
+
+    border: none !important;
+    border-radius: 20px;
+  }
+  .mail:hover {
+    opacity: 90%;
+  }
+  .mail:active {
+    opacity: 80%;
+  }
 .mainAndVk{
   display: flex;
   flex-direction: row;
@@ -259,11 +308,12 @@ body{
 }
 .my-form
 {
+  color: white;
   width: 700px;
   border-radius: 13px;
   padding: 15px;
   border: 3px solid black;
-  background-color: rgba(197, 104, 104, 0.5);
+  background-color: rgba(166, 88, 88, 0.7);
   resize: vertical;
   min-height: 160px;
   max-height: 1600px;
@@ -273,11 +323,11 @@ body{
   margin-top: 15px;
   margin-left: -10px;
 }
-.comment-container{
+.comment-container{ /* Например, 50% от ширины родителя */
+  display: inline-block;
   border-radius: 80px;
   padding: 20px;
   width: 800px;
-  height: 200px;
   background-color: rgba(166, 88, 88, 0.8);
   color: white;
   margin-bottom: 50px;
@@ -315,7 +365,7 @@ body{
 }
 .date_posted{
   text-shadow: 0 0 7px rgb(87, 42, 42);
-  margin-top: 120px;
+  margin-bottom: -10px;
 }
 .govno-1{
   position: absolute;
@@ -323,20 +373,35 @@ body{
   margin-left: 595px;
 }
 .caption{
+  box-shadow: 0 0 7px rgb(87, 42, 42);
+  margin-left: 27px;
   align-self: center;
   padding: 20px;
   width: 700px;
-  height: 100px;
-  position: absolute;
+  height: fit-content;
   border: 1px solid white;
-  text-align: start;
   border-radius: 40px;
-
+  text-align: start;
 }
-.border-1{
-  border: 1px solid white;
-  width: 700px;
-  position: absolute;
-  margin-right: 200px;
 
+textarea::placeholder {
+  color: #d5d5d5; /* Изменяем цвет текста placeholder */
+  font-size: 16px; /* Изменяем размер шрифта текста placeholder */
+}
+.avtorize-gad{
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 100px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+button{
+  border: none !important;
+}
+button:active{
+  border: none !important;
+}
+cal{
+  color: rgba(115, 55, 55, 1);
 }

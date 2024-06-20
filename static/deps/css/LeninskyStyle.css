@@ -751,7 +751,15 @@ body{
   border-radius: 15px;
   margin-top: 5px;
   box-shadow: 0 0 9px #348074;
+  cursor: pointer;
 }
+.page-21:hover{
+  background-color: rgb(46, 114, 103);
+}
+.page-21:active{
+  background-color: rgb(41, 101, 92);
+}
+
 
 .idServer{
   color: white;
@@ -766,7 +774,15 @@ body{
   border-radius: 15px;
   margin-top: 5px;
   box-shadow: 0 0 9px #348074;
+  cursor: pointer;
 }
+.idServer:hover{
+  background-color: rgb(46, 114, 103);
+}
+.idServer:active{
+  background-color: rgb(41, 101, 92);
+}
+
 
 
 
