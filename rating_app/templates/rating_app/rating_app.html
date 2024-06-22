@@ -24,14 +24,14 @@
           class="compass"
           src="https://static.overlay-tech.com/assets/757ed013-3834-4713-a8b2-8711d46b5610.svg"
         />
-        <div class="frame-10"><button onclick="window.open(`{% url "main:index" %}`)" class="kontakty">Главная</button></div>
-        <div class="frame-10"><button onclick="window.open(`{% url "map:map" %}`)" class="kontakty">Карта</button></div>
+        <div class="frame-10"><button onclick="window.location.replace(`{% url "main:index" %}`)" class="kontakty">Главная</button></div>
+        <div class="frame-10"><button onclick="window.location.replace(`{% url "map:map" %}`)" class="kontakty">Карта</button></div>
         <div class="frame-10"><button onclick="window.open(`{% url "main:about" %}`)" class="kontakty">О&nbsp;нас</button></div>
       </div>
       {% if not user.is_authenticated %}
-            <a onclick="window.open(`{% url "user:login" %}`)" class="frame-11"><p class="vhod">Вход</p></a>
+            <button onclick="window.location.replace(`{% url "user:login" %}`)" class="frame-11"><p class="vhod">Вход</p></button>
               {% else %}
-              <span class="frame-11"><p class="vhod ">{{ user }}</p></span>
+              <span class="frame-11"><p class="vhod-32">{{ user }}</p></span>
             {% endif %}
     </div>
     <div class="frame-86">
@@ -41,8 +41,8 @@
       class="frame-73"
       src={{ object.image.url }}
       />
-      <div id="place-info" style=" box-shadow: 0 0 11px rgba(115, 55, 55, 0.89); margin-top: 45px; background-color: rgba(197, 104, 104, 0.5);border: 1px solid #ccc;border-radius: 8px; padding: 10px;margin-bottom: 10px;word-wrap: break-word;overflow-wrap: break-word; width: 680px;">
-        <h1 id="place-name" style="  font-weight: 600; color: rgba(115, 55, 55, 1);margin-bottom: 20px;letter-spacing: 0.72px;">{{ object.name }}</h1>
+      <div id="place-info" style=" box-shadow: 0 0 11px rgba(115, 55, 55, 0.89); margin-top: 45px; background-color: rgba(197, 104, 104, 0.5);border: 1px solid rgba(115, 55, 55, 0.15);border-radius: 8px; padding: 20px;margin-bottom: 10px;word-wrap: break-word;overflow-wrap: break-word; width: 860px;">
+        <h1 id="place-name" style="  font-weight: 600; color: rgba(115, 55, 55, 1);margin-bottom: 20px;letter-spacing: 0.72px; font-size: 50px;">{{ object.name }}</h1>
         <div style="display: flex; flex-direction: row;">
           <p class="avtor-imja-familija"><b>Автор:</b>&nbsp;{{ object.author }}</p>
           <p id="autor-description" class="avtor-imja-familija"></p>
@@ -93,7 +93,7 @@
                     <span class="fa fa-star fa-3x my-btn starStyle active" ></span>
                     <span class="fa fa-star fa-3x my-btn starStyle active" ></span>
                 {% endif %}
-                <p class="cal avtor-imja-familija-1"style="color: rgba(115, 55, 55, 1);"> {{ object.rate }}</p>
+                <p class="cal" style="position: absolute; color: rgba(115, 55, 55, 1); font-size: 20px; right: 22%; bottom:-15%;"> {{ object.rate }}</p>
             </div>
             {% endif %}
           <p id="autor-description" class="avtor-imja-familija"></p>
@@ -101,9 +101,9 @@
       </div>
     </div>
     <!-- Форма для комментариев -->
-    <div class="addCommenter">
         {% if user.is_authenticated %}
-      <h2 style="font-weight: 600">Оставить отзыв</h2>
+       <div class="addCommenter">
+      <h2 style="font-weight: 600; font-size: 38px; margin-top: 30px; margin-bottom: 10px;">Оставить отзыв</h2>
       <form class="form-1" action="" method="POST" id="{{object.id}}" >
             {% csrf_token %}
           <textarea id="comment" class="my-form" placeholder="Поделитесь своим мнением об Арт-объекте!" required></textarea>
@@ -114,23 +114,24 @@
                 <button type="button" class="fa fa-star fa-3x my-btn starStyle" id="fourth"></button>
                 <button type="button" class="fa fa-star fa-3x my-btn starStyle" id="fifth"></button>
             </div>
-          <div style = "text-align: center; margin-top: 30px; margin-left:-10px; margin-bottom: 100px;">
+          <div style = "text-align: center; margin-top: 40px; margin-left:-10px; margin-bottom: 100px;">
               <button id="commentButton" class="addCommentButton disabled" onclick="getText()">Оставить отзыв</button>
           </div>
       </form>
 
     </div>
     <!-- Секция для отображения комментариев -->
-    <div class="comments-1" id="commentsSection">
-      <h2 style="color: rgba(41, 108, 99, 1); margin-right: 10px; margin-bottom: 50px; font-weight: 800;">Отзывы</h2>
-      <div id="commentsList">
+      <h2 style="color: rgba(41, 108, 99, 1);text-align: center; margin-right: 23px; margin-bottom: 60px; font-weight: 800; font-size: 34px; margin-top: 40px;">Отзывы</h2>
+
       {% if comments.first == none %}
           <p class="net-otzyv">Пока никто не оставил отзыв, но вы можете стать <u>первым</u>!</p>
       {% else %}
+          <div class="comments-1" id="commentsSection">
+            <div id="commentsList">
         {% for comment in comments %}
       <blockquote class="comment-container">
         <p class="name-user">{{ comment.author}}</p>
-          <div class="govno-1" style="margin-right: 428px">
+          <div class="govno-1" style="margin-right: 498px">
                 {% if comment.rate == 1 %}
                     <span class="fa fa-star fa-3x my-btn starStyle active" ></span>
                     <span class="fa fa-star fa-3x my-btn starStyle" ></span>
@@ -174,7 +175,7 @@
     </div>
     {% endif %}
   {% else %}
-            <p class="avtorize-gad">Авторизуйтесь, чтобы получить возможность поделиться своим мнением и узнать чужое об этом Арт-объекте! </p>
+            <p class="avtorize-gad">Авторизуйтесь, чтобы получить возможность поделиться своим мнением об этом Арт-объекте! </p>
   {% endif %}
 
     <div class="frame-3">

@@ -19,7 +19,7 @@ body{
     top: 0;
   }
   .frame-14 {
-    width: 1920px;
+    width: 100%;
     height: 140px;
     background: linear-gradient(
       180deg,
@@ -30,23 +30,23 @@ body{
     top: -5px;
   }
   .flex-wrapper-one {
+    width: 100%;
     background-size: 100% 100%;
     background-position: center;
-    background-image: url("https://static.overlay-tech.com/assets/e98bf089-4749-473f-a27f-e73ebcdb215a.svg");
-    padding: 280px 641.62px 301.13px 743px;
+    background-image: url("https://static.overlay-tech.com/assets/cb948451-2123-446a-9c34-cf50bb8e41f0.svg");
+    padding: 280px 1050px 288.13px 1050px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     position: relative;
   }
   .registracija {
+    font-size: 34px;
     color: rgb(41,108,99);
-    font-weight: 600;
     margin-bottom: 45px;
-    margin-left: 190px;
+    margin-left: 90px;
     letter-spacing: 1.6px;
-    font-family: var(--raleway-32-bold-family);
-    font-size: 30px;
+    font-weight: 700;
     line-height: var(--raleway-32-bold-line-height);
   }
   .frame-15 {
@@ -60,15 +60,14 @@ body{
     background-color: rgb(139,213,203);
     color: white;
     letter-spacing: 1.2px;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 400;
-
     padding: 10px;
     margin-bottom: 20px;
-    margin-left: 66px;
+    margin-left: -90px;
     border: 2px solid black;
 
-    width: 450px;
+    width: 550px;
     border-radius: 20px;
 
   }
@@ -96,11 +95,10 @@ body{
   .uzhe-est-akkaunt {
     color: rgb(41,108,99);
     margin-top: 15px;
-    margin-right: 3px;
-    margin-left: 45px;
+    margin-left: -86px;
     letter-spacing: 1.2px;
     font-family: var(--raleway-24-semi-bold-family);
-    font-size: 18px;
+    font-size: 22px;
     font-weight: var(--raleway-24-semi-bold-weight);
     line-height: var(--raleway-24-semi-bold-line-height);
     
@@ -110,10 +108,10 @@ body{
     color: rgb(151,73,73);
     text-decoration: underline;
     letter-spacing: 1.2px;
-    font-size: 18px;
+    font-size: 22px;
 
     background: transparent;
-
+    margin-top: -7px;
     border: none !important;
     cursor:pointer;
   }
@@ -132,12 +130,13 @@ body{
     padding: 12.5px 495px 12.5px 600px;
     display: flex;
     align-items: center;
+    width:100%
   }
   .compass {
     width: 75px;
     height: 75px;
-    margin-left: -169px;
-    margin-right: 460px;
+    margin-left: -4.95%;
+    margin-right: 38.5%;
   }
   .mainAndVk{
     display: flex;
@@ -155,17 +154,18 @@ body{
     display: flex;
     justify-content: center;
     color: rgb(255, 255, 255);
+    margin-top: 15px;
     background-color: rgb(139,213,203);
     letter-spacing: 1.2px;
     align-self: center;
-    margin-left: 45px;
+    margin-left: -105px;
     font-family: var(--raleway-24-semi-bold-family);
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 500;
     line-height: var(--raleway-24-semi-bold-line-height);
-    padding:  10px 10px 10px 10px;
+    padding:  12px;
     border: 0;
-    border-radius: 20px;
+    border-radius: 25px;
     cursor: pointer;
   }
   .inputButton:hover {
@@ -180,6 +180,7 @@ body{
     background-image: url("../media/vk.svg");
     border: none !important;
     border-radius: 20px;
+    margin-left:5%;
     box-shadow: 0 0 10px #296C63;
       cursor: pointer;
   }

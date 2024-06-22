@@ -23,16 +23,16 @@
               src="https://static.overlay-tech.com/assets/6a2b1154-5ade-42dd-a20a-10e0e46a9fc9.svg"
             />
             <div class="frame-10">
-              <button onclick="window.open(`{% url "main:contacts" %}`)" class="kontakty">Контакты</button>
+              <button onclick="window.location.replace(`{% url "main:contacts" %}`)" class="kontakty">Контакты</button>
             </div>
             <div class="frame-10">
-              <button onclick="window.open(`{% url "main:index" %}`)" class="kontakty">Главная</button>
+              <button onclick="window.location.replace(`{% url "main:index" %}`)" class="kontakty">Главная</button>
             </div>
             <div class="frame-10">
-              <button onclick="window.open(`{% url "main:about" %}`)" class="kontakty">О&nbsp;нас</button>
+              <button onclick="window.location.replace(`{% url "main:about" %}`)" class="kontakty">О&nbsp;нас</button>
             </div>
             {% if not user.is_authenticated %}
-            <button onclick="window.open(`{% url "user:login" %}`)" class="frame-11"><p class="vhod">Вход</p></button>
+            <button onclick="window.location.replace(`{% url "user:login" %}`)" class="frame-11"><p class="vhod">Вход</p></button>
               {% else %}
               <div class="frame-11"><p class="vhod">{{ user }}</p></div>
             {% endif %}
@@ -144,7 +144,7 @@
       </div>
     <div id="modal" class="modal">
         <div class="modal-content">
-            <h2>Выберите, что вы хотите сделать с объектом</h2>
+            <h2 style="font-size: 25px;">Выберите, что вы хотите сделать с объектом</h2>
             <button class = "idServer" id="addToServer">Добавить в маршрут</button>
             <button class="page-21" id="openPage">Открыть карточку</button>
         </div>

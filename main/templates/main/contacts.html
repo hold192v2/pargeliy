@@ -13,9 +13,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<body class="body">
-    <div class="kontakty">
-        <div class="frame-2">
+<header>
+    <div class="frame-2">
             <div class="frame-7">
               <img
                 alt=""
@@ -23,21 +22,24 @@
                 src="https://static.overlay-tech.com/assets/6a2b1154-5ade-42dd-a20a-10e0e46a9fc9.svg"
               />
               <div class="frame-10">
-                <button onclick="window.open(`{% url "main:index" %}`)" class="kontakty kontakty1">Главная</button>
+                <button onclick="window.location.replace(`{% url "main:index" %}`)" class="kontakty kontakty1">Главная</button>
               </div>
               <div class="frame-10">
-                <button onclick="window.open(`{% url "map:map" %}`)" class="kontakty kontakty1">Карта</button>
+                <button onclick="window.location.replace(`{% url "map:map" %}`)" class="kontakty kontakty1">Карта</button>
               </div>
               <div class="frame-10">
-                <button onclick="window.open(`{% url "main:about" %}`)" class="kontakty kontakty1">О&nbsp;нас</button>
+                <button onclick="window.location.replace(`{% url "main:about" %}`)" class="kontakty kontakty1">О&nbsp;нас</button>
               </div>
               {% if not user.is_authenticated %}
-            <button onclick="window.open(`{% url "user:login" %}`)" class="frame-11"><p class="vhod">Вход</p></button>
+            <button onclick="window.location.replace(`{% url "user:login" %}`)" class="frame-11"><p class="vhod">Вход</p></button>
               {% else %}
               <div class="frame-11"><p class="vhod">{{ user }}</p></div>
             {% endif %}
             </div>
           </div>
+</header>
+<body class="body">
+    <div class="kontakty">
         <div class="frame-95">
             <img
             alt=""
@@ -52,22 +54,24 @@
                 <button class="frame-92"><p class="klik">Клик</p></button>
             </form>
             <div class="frame-89">
-            <p class="timlid-anna-anna-pivovarova-me-di">
-              Тимлид Анна - Anna.Pivovarova&#64;urfu.me<br />
-              Дизайнер Дарья - Anikina.Daria&#64;urfu.me<br />
-              Разработчик Александр - AO.Grigoryev&#64;urfu.me<br />
-              Разработчик Кирилл - kirill.panshin&#64;urfu.ru<br />
-              Аналитик Руслан - Ruslan.Zagidullin&#64;at.urfu.ru
+                <p class="timlid-anna-anna-pivovarova-me-di">
+                  Тимлид Анна - Anna.Pivovarova&#64;urfu.me<br />
+                  Дизайнер Дарья - Anikina.Daria&#64;urfu.me<br />
+                  Разработчик Александр - AO.Grigoryev&#64;urfu.me<br />
+                  Разработчик Кирилл - kirill.panshin&#64;urfu.ru<br />
+                  Аналитик Руслан - Ruslan.Zagidullin&#64;at.urfu.ru
+                </p>
+            </div>
+            <p class="kontakty-nashej-koman-dy">
+                КОНТАКТЫ НАШЕЙ КОМАНДЫ
+            </p>
+            <p class="otprav-te-nam-svoj-art-ob-ekt">
+                Отправьте нам свой арт-объект
             </p>
         </div>
-        <p class="kontakty-nashej-koman-dy">
-            КОНТАКТЫ НАШЕЙ КОМАНДЫ
-        </p>
-        <p class="otprav-te-nam-svoj-art-ob-ekt">
-            Отправьте нам свой арт-объект
-        </p>
-        </div>
-        <div class="frame-3">
+      </div>
+<footer>
+    <div class="frame-3">
           <img
             alt=""
             class="compass-two"
@@ -84,6 +88,6 @@
             </div>
           </div>
         </div>
-      </div>
+</footer>
 </body>
 </html>

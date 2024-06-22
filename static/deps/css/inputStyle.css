@@ -29,21 +29,22 @@ body{
     position: absolute;
   }
   .flex-wrapper-one {
+    width: 100%;
     background-size: 100% 100%;
     background-position: center;
     background-image: url("https://static.overlay-tech.com/assets/cb948451-2123-446a-9c34-cf50bb8e41f0.svg");
-    padding: 280px 641.62px 288.13px 743px;
+    padding: 280px 1050px 288.13px 1050px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     position: relative;
   }
   .vhod {
+    font-size: 34px;
     color: rgb(41,108,99);
     margin-bottom: 45px;
-    margin-left: 254px;
+    margin-left: 150px;
     letter-spacing: 1.6px;
-    font-size: 27px;
     font-weight: 700;
     line-height: var(--raleway-32-bold-line-height);
   }
@@ -58,15 +59,14 @@ body{
     background-color: rgb(139,213,203);
     color: white;
     letter-spacing: 1.2px;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 400;
-
     padding: 10px;
     margin-bottom: 20px;
-    margin-left: 66px;
+    margin-left: -90px;
     border: 2px solid black;
 
-    width: 450px;
+    width: 550px;
     border-radius: 20px;
 
   }
@@ -80,17 +80,18 @@ body{
     display: flex;
     justify-content: center;
     color: rgb(255, 255, 255);
+    margin-top: 15px;
     background-color: rgb(139,213,203);
     letter-spacing: 1.2px;
     align-self: center;
-    margin-left: 45px;
+    margin-left: -105px;
     font-family: var(--raleway-24-semi-bold-family);
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 500;
     line-height: var(--raleway-24-semi-bold-line-height);
-    padding:  10px 10px 10px 10px;
+    padding:  12px;
     border: 0;
-    border-radius: 20px;
+    border-radius: 25px;
     cursor: pointer;
   }
   .inputButton:hover {
@@ -124,11 +125,10 @@ body{
   .net-akkaunta {
     color: rgb(41,108,99);
     margin-top: 15px;
-    margin-right: 3px;
-    margin-left: 10px;
+    margin-left: -122px;
     letter-spacing: 1.2px;
     font-family: var(--raleway-24-semi-bold-family);
-    font-size: 18px;
+    font-size: 22px;
     font-weight: var(--raleway-24-semi-bold-weight);
     line-height: var(--raleway-24-semi-bold-line-height);
   }
@@ -136,7 +136,7 @@ body{
     color: rgb(151,73,73);
     text-decoration: underline;
     letter-spacing: 1.2px;
-    font-size: 18px;
+    font-size: 22px;
 
     background: transparent;
     margin-top: 14px;
@@ -156,8 +156,8 @@ body{
   .compass {
     width: 75px;
     height: 75px;
-    margin-left: -169px;
-    margin-right: 460px;
+    margin-left: -11.51%;
+    margin-right: 89.82%;
   }
   .mail {
     width: 70px;
@@ -177,6 +177,7 @@ body{
     background-image: url("../media/vk.svg");
     border: none !important;
     border-radius: 20px;
+    margin-left:5%;
     cursor: pointer;
     box-shadow: 0 0 10px #296C63;
   }

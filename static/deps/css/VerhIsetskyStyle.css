@@ -130,7 +130,7 @@ body{
     position: relative;
   }
   .rajony {
-    font-size: 20px;
+    font-size: 22px;
 
     line-height: 47px;
     color: rgb(237,255,250);
@@ -154,12 +154,13 @@ body{
     padding: 12.5px 495px 12.5px 600px;
     display: flex;
     align-items: center;
+    width: 100%
   }
   .compass-two {
     width: 75px;
     height: 75px;
-    margin-left: -169px;
-    margin-right: 459px;
+    margin-left: -5.61%;
+    margin-right: 38.62%;
   }
   .frame-80 {
     background-color: rgb(237,255,250);
@@ -254,7 +255,9 @@ body{
     object-fit: cover;
     background-position: right;
     background-repeat: no-repeat;
-    margin-left: 1.8%;
+    text-align: center;
+    margin-left: 12.4%;
+    margin-right: 12%;
     border: #1a1d20 solid 3px;
   }
   .favicon1{
@@ -324,7 +327,7 @@ body{
 
     color: white;
     display: flex;
-    margin: 75px 125px 10px 105px;
+    margin: 5% 1.8% 2.5% 28.6%;
     border: none !important;
     border-radius: 10px;
     background: rgb(197, 104, 104);
@@ -351,10 +354,10 @@ body{
     padding: 10px;
     margin: 31px 5px 100px 5px;
     transition: border-color 0.3s;
-    left: 650px;
-    cursor: pointer;
+    left: 45%;
     border-radius: 30px;
     box-shadow: 0 0 15px #348074;
+    cursor: pointer;
   }
   .knopkaMarsrut:hover {
     background-color: rgb(171, 83, 83);
@@ -364,10 +367,10 @@ body{
   }
   .knopkaSort{
     width: 450px;
-    height: 40px;
+    height: 42px;
     font-weight: 500;
     font-style: normal;
-    font-size: 20px;
+    font-size: 22px;
     line-height: 1;
     letter-spacing: normal;
     text-align: center;
@@ -401,6 +404,7 @@ body{
   .vk{
     height: 70px;
     width: 70px;
+    margin-left:5%;
     background-image: url("../media/vk.svg");
     border: none !important;
     border-radius: 20px;
@@ -439,16 +443,17 @@ body{
   .sortPodtver {
 
     font-style: normal;
+    width: 150px;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 22px;
     line-height: 1;
     letter-spacing: normal;
     text-transform: none;
     color: white;
     border: 3px solid rgb(197, 104, 104);
     background-color: rgb(197, 104, 104);
-    padding: 5px 5px 5px 5px;
-    margin: 75px 5px 10px 5px;
+    padding: 7px 7px 7px 7px;
+    margin: 50px -100px 23px 16%;
     transition: border-color 0.3s;
     border-radius: 30px;
     animation: glow-shadow 6s infinite;
@@ -588,7 +593,7 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
-    padding: 10px 20px 20px 20px;
+    padding: 20px 40px 40px 40px;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -612,15 +617,16 @@ body{
 .page-21{
   color: white;
   font-family: "Raleway", sans-serif;
-  width: 180px;
+  font-size: 16px;
+  width: 220px;
   text-align: center;
   font-weight: 500;
   border: none;
   background-color: rgba(52, 128, 116);
-  padding: 10px;
-  margin-left: 15px;
+  margin-top: 1%;
+  padding: 13px;
+  margin-left: 4%;
   border-radius: 15px;
-  margin-top: 5px;
   box-shadow: 0 0 9px #348074;
   cursor: pointer;
 }
@@ -631,18 +637,20 @@ body{
   background-color: rgb(41, 101, 92);
 }
 
+
 .idServer{
   color: white;
   text-align: center;
-  width: 180px;
+  width: 220px;
+  font-size: 16px;
   font-family: "Raleway", sans-serif;
   border: none;
   font-weight: 500;
   background-color: rgba(52, 128, 116);
-  padding: 10px;
-  margin-left: 70px;
+  padding: 13px;
+  margin-left: 40px;
   border-radius: 15px;
-  margin-top: 5px;
+  margin-top: -20%;
   box-shadow: 0 0 9px #348074;
   cursor: pointer;
 }
